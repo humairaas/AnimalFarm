@@ -37,7 +37,7 @@ import java.awt.event.WindowEvent;
 public class AWTWindow extends Frame {
     public void init(String title) {
         setTitle(title);
-        setSize(640, 480);
+        setSize(1000, 680);
         setResizable(false);
         addWindowListener(new WindowAdapter() {
             @Override
