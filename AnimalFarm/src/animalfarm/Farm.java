@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -13,17 +13,13 @@ import javax.swing.JPanel;
  */
 public class Farm extends JPanel implements ActionListener {
 
-    String weatherMode;
-    String[][] farm = new String[17][25];
+    ImageIcon[][] farm = new ImageIcon[17][25];
     private Element el;
     private final int size = 40;
-    private JButton button;
+    
+    boolean isRainy = false;
 
     public Farm() {
-        this.weatherMode = "Sunny";
-        button = new JButton("Refresh");
-        setLayout(new BorderLayout());
-        add(button, BorderLayout.SOUTH);
         el = new Element();
     }
 
@@ -46,38 +42,36 @@ public class Farm extends JPanel implements ActionListener {
         super.paint(g);
 
         //Draw initial farm
-        g.drawImage(el.getGrass(), 0, 0, null);
+        el.getGrass().paintIcon(this, g, 0, 0);
 
-        //Windy tree
+        //Draw elements
         for (int row = 0; row < farm.length; row++) {
             for (int col = 0; col < farm[row].length; col++) {
-                if (farm[row][col] != null && farm[row][col].equals("tree")) {
-                    el.getTree().paintIcon(this, g, col * size, row * size);
-                }
-                if (farm[row][col] != null && farm[row][col].equals("cow")) {
-                    g.drawImage(el.getCow(), col * size, row * size, null);
+                if (farm[row][col] != null) {
+                    farm[row][col].paintIcon(this, g, col * size, row * size);
                 }
             }
         }
-
-//            //Cloudy
-//            g.drawImage(el.getCloudy(), 0, 0, null);
-//            //Rain
-//            for(int row=0; row<farm.length; row++){
-//                for (int col=0; col<farm[row].length; col++){
-//                    el.getRain().paintIcon(this, g, col*size*3, row*size*3);
-//                }
-//            }
-//            //Night
-//            g.drawImage(el.getNight(), 0, 0, null);
+        
+        //Cloudy
+        if(isRainy){
+            el.getCloudy().paintIcon(this, g, 0, 0);
+            el.getRain().paintIcon(this, g, 0, 0);
+        }
+        
+        //Night
+//        g.drawImage(el.getNight(), 0, 0, null);
     }
+//
+//    public String[][] getFarm() {
+//        return farm;
+//    }
 
-    public String[][] getFarm() {
-        return farm;
+    public void setIsRainy(boolean isRainy) {
+        this.isRainy = isRainy;
     }
 
     public void showFarm() {
-        System.out.println("Weather Mode: " + weatherMode);
         for (int row = 0; row < farm.length; row++) {
             System.out.println("");
             for (int col = 0; col < farm[row].length; col++) {
@@ -86,12 +80,15 @@ public class Farm extends JPanel implements ActionListener {
         }
     }
 
-    public void setElement(String element, int x, int y) {
-        farm[x][y] = element;
+    public void setElement(Decorator decorator, int x, int y) {
+        farm[x][y] = decorator.getImage();
     }
-
-    public void setWeatherMode(String weatherMode) {
-        WeatherFacade weather = new WeatherFacade(this, weatherMode);
-        weather.start();
+    
+    public void setElement(Animal animal, int x, int y) {
+        farm[x][y] = animal.getImage();
+    }
+    
+    public void setElement(Food food, int x, int y) {
+        farm[x][y] = food.getImage();
     }
 }

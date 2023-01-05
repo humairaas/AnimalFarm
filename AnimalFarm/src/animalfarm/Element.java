@@ -8,31 +8,25 @@ import javax.swing.ImageIcon;
  * @author User
  */
 public class Element {
-    private Image grass, cloudy, night, cow;
-    private ImageIcon rain, tree;
+    private ImageIcon grass, cloudy, night;
+    private ImageIcon rain;
 
     public Element() {
         //Grass
-        grass = new ImageIcon("res/farm.png").getImage();
+        grass = new ImageIcon("res/farm.png");
         
         //Night
-        night = new ImageIcon("res/night.png").getImage();
+        night = new ImageIcon("res/night.png");
         
         //Cloudy
-        cloudy = new ImageIcon("res/cloudy.png").getImage();
+        cloudy = new ImageIcon("res/cloudy.png");
         
         //Rain
-        rain = new ImageIcon("res/rain.gif");
-        
-        //Tree
-        tree = new ImageIcon("res/wind_tree.gif");
-        
-        //Cow
-        cow = new ImageIcon("res/cow.png").getImage();
+        rain = new ImageIcon("res/rain5.gif");
         
     }
 
-    public Image getGrass() {
+    public ImageIcon getGrass() {
         return grass;
     }
 
@@ -40,19 +34,11 @@ public class Element {
         return rain;
     }
 
-    public ImageIcon getTree() {
-        return tree;
-    }
-
-    public Image getCloudy() {
+    public ImageIcon getCloudy() {
         return cloudy;
     }
 
-    public Image getNight() {
+    public ImageIcon getNight() {
         return night;
-    }
-
-    public Image getCow() {
-        return cow;
     }
 }

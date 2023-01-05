@@ -1,5 +1,7 @@
 package animalfarm;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -12,22 +14,23 @@ public class AnimalFarm {
      */
     public static void main(String[] args) {
         Farm farm = new Farm(); 
-        Decorator tree = new Tree("Tree");
-        Animal cow = new Cow("Cow");
+        Decorator tree = new Tree();
+        Animal cow = new Cow();
 
-        farm.setElement(tree.getImage(), 0, 0);
-        farm.setElement(tree.getImage(), 1, 4);
-        farm.setElement(tree.getImage(), 1, 5);
-        farm.setElement(tree.getImage(), 3, 6);
-        farm.setElement(tree.getImage(), 8, 6);
-        farm.setElement(tree.getImage(), 6, 9);
-        farm.setElement(tree.getImage(), 11, 5);
-        farm.setElement(tree.getImage(), 11, 15);
-        farm.setElement(cow.getImage(), 4, 10);
-
-        
         farm.start();
-        farm.showFarm();
+        
+        farm.setElement(tree, 0, 0);
+        farm.setElement(tree, 1, 1);
+        farm.setElement(tree, 2, 2);
+        
+        Scanner s = new Scanner(System.in);
+        
+        
+        System.out.print("Rain?");
+        String ans = s.next();
+        if(ans.equals("y")){
+            farm.setIsRainy(true);
+        }
     }
     
 }

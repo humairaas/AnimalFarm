@@ -1,15 +1,16 @@
 package animalfarm;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author User
  */
 public abstract class Decorator {
     String name;
-    String image;
+    ImageIcon image;
 
-    public Decorator(String name) {
-        this.name = name;
+    public Decorator() {
     }
 
     public String getName() {
@@ -20,11 +21,11 @@ public abstract class Decorator {
         this.name = name;
     }
 
-    public String getImage() {
+    public ImageIcon getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(ImageIcon image) {
         this.image = image;
     }
 }
