@@ -10,6 +10,6 @@ public class Tree extends Decorator{
 
     public Tree() {
         name = "tree";
-        image = new ImageIcon("res/wind_tree.gif");
+        image = new ImageIcon("res/tree.png");
     }
 }
