@@ -10,12 +10,12 @@ import javax.swing.JPanel;
  * @author User
  */
 public class Farm extends JPanel implements ActionListener {
-    final int height = 17;
-    final int width = 25;
+    private final int height = 17;
+    private final int width = 25;
     
     Element [][] farm = new Element[height][width];
     
-    private Icon el;
+    private final Icon el;
     private final int size = 40;
     
     private boolean isCloudy = false;
@@ -25,15 +25,8 @@ public class Farm extends JPanel implements ActionListener {
 
     public Farm() {
         el = new Icon();
-    }
-
-    public void start() {
-        GUIFacade gui = new AWTGUIFacade();
-        gui.createWindow("Animal Farm", this);
-    }
-
-    public void stop() {
-
+//         addKeyListener(new KeyHandler(this));
+//        setFocusable(true);
     }
 
     @Override

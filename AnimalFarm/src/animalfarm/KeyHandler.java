@@ -13,7 +13,13 @@ import java.awt.event.*;
 public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
-    public static boolean treePressed;
+    WeatherFacade weather;
+    Farm farm;
+
+    public KeyHandler(Farm farm, WeatherFacade weather) {
+        this.farm = farm;
+        this.weather = weather;
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -35,6 +41,28 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_RIGHT) {
             rightPressed = true;
+        }
+        
+        // Control weather
+        if (code == KeyEvent.VK_Q) {
+            weather.Sunny();
+            System.out.println("Pressed Sunny");
+        }
+        if (code == KeyEvent.VK_W) {
+            weather.Windy();
+            System.out.println("Pressed Windy");
+        }
+        if (code == KeyEvent.VK_E) {
+            weather.Cloudy();
+            System.out.println("Pressed Cloudy");
+        }
+        if (code == KeyEvent.VK_R) {
+            weather.Rainy();
+            System.out.println("Pressed Rainy");
+        }
+        if (code == KeyEvent.VK_T) {
+            weather.Night();
+            System.out.println("Pressed Night");
         }
     }
 

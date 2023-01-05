@@ -1,32 +1,33 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
-
 /**
  *
  * @author User
  */
 public class AnimalFarm {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Farm farm = new Farm(); 
-        
-        Decorator tree = new Tree();
-        
-        WeatherFacade weather = new WeatherFacade(farm, tree);
-
-        farm.start();
+    
+    Farm farm;
+    Decorator tree;
+    WeatherFacade weather;
+    
+    public AnimalFarm() {
+        farm = new Farm(); 
+        tree = new Tree();
+        weather = new WeatherFacade(farm, tree);
+    }
+    
+    public void start(){
+        AWTWindow window = new AWTWindow();
+        window.init("Animal Farm");
+        window.add(farm);
+        window.addKeyListener(new KeyHandler(farm, weather));
+        window.setFocusable(true);
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
         
         farm.setElement(tree, 0, 0);
         farm.setElement(tree, 1, 1);
         farm.setElement(tree, 2, 2);
-        
         farm.showFarm();
-        
-        weather.Rainy();
-    }
-    
+    }    
 }
