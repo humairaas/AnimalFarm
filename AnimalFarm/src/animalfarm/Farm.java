@@ -69,6 +69,9 @@ public class Farm extends JPanel implements ActionListener {
         if(isNight){
             el.getNight().paintIcon(this, g, 0, 0);
         }
+        
+        //Menu
+        el.getMenu().paintIcon(this, g, 22*size, 0);
     }
 
     public void setIsRainy(boolean isRainy) {
@@ -87,7 +90,7 @@ public class Farm extends JPanel implements ActionListener {
         this.isNight = isNight;
     }
 
-    public void setElement(Decorator decorator, int x, int y) {
+    public void setElement(Decoration decorator, int x, int y) {
         this.farm[x][y] = decorator;
     }
     

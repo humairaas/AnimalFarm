@@ -5,9 +5,8 @@ package animalfarm;
  * @author User
  */
 public class AnimalFarm {
-    
     Farm farm;
-    Decorator tree;
+    Decoration tree;
     WeatherFacade weather;
     
     public AnimalFarm() {

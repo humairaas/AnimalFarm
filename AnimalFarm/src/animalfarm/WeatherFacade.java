@@ -8,10 +8,10 @@ import javax.swing.ImageIcon;
  */
 public class WeatherFacade {
     Farm farm;
-    Decorator tree;
+    Decoration tree;
     Audio audio;
 
-    public WeatherFacade(Farm farm, Decorator tree) {
+    public WeatherFacade(Farm farm, Decoration tree) {
         this.farm = farm;
         this.tree = tree;
         audio = new Audio();
@@ -28,6 +28,7 @@ public class WeatherFacade {
         audio.stopRain();
         audio.stopNight();
         audio.stopWind();
+        audio.playSun();
     }
     
     public void Cloudy(){
@@ -38,6 +39,7 @@ public class WeatherFacade {
         
         tree.setImage(new ImageIcon("res/tree.png"));
         
+        audio.stopSun();
         audio.stopRain();
         audio.stopNight();
         audio.stopWind();
@@ -51,6 +53,7 @@ public class WeatherFacade {
         
         tree.setImage(new ImageIcon("res/wind_tree.gif"));
         
+        audio.stopSun();
         audio.stopRain();
         audio.stopNight();
         audio.playWind();
@@ -64,6 +67,7 @@ public class WeatherFacade {
         
         tree.setImage(new ImageIcon("res/wind_tree.gif"));
         
+        audio.stopSun();
         audio.stopWind();
         audio.stopNight();
         audio.playRain();

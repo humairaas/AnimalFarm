@@ -6,11 +6,11 @@ import javax.swing.ImageIcon;
  *
  * @author User
  */
-public abstract class Decorator implements Element{
+public abstract class Decoration implements Element{
     String name;
     ImageIcon image;
 
-    public Decorator() {
+    public Decoration() {
     }
 
     @Override

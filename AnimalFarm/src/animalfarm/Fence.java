@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
  *
  * @author User
  */
-public class Fence extends Decorator{
+public class Fence extends Decoration{
 
     public Fence() {
         name = "fence";

@@ -46,23 +46,23 @@ public class KeyHandler implements KeyListener {
         // Control weather
         if (code == KeyEvent.VK_Q) {
             weather.Sunny();
-            System.out.println("Pressed Sunny");
+            System.out.println("Q");
         }
         if (code == KeyEvent.VK_W) {
             weather.Windy();
-            System.out.println("Pressed Windy");
+            System.out.println("W");
         }
         if (code == KeyEvent.VK_E) {
             weather.Cloudy();
-            System.out.println("Pressed Cloudy");
+            System.out.println("E");
         }
         if (code == KeyEvent.VK_R) {
             weather.Rainy();
-            System.out.println("Pressed Rainy");
+            System.out.println("R");
         }
         if (code == KeyEvent.VK_T) {
             weather.Night();
-            System.out.println("Pressed Night");
+            System.out.println("T");
         }
     }
 

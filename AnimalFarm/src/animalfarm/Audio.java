@@ -9,9 +9,9 @@ import javax.sound.sampled.Clip;
  * @author User
  */
 public class Audio {
-    File rain, wind, night;
-    AudioInputStream rainStream, windStream, nightStream;
-    Clip rainClip, windClip, nightClip;
+    File rain, wind, night, sun;
+    AudioInputStream rainStream, windStream, nightStream, sunStream;
+    Clip rainClip, windClip, nightClip, sunClip;
     
     public Audio(){
         try {
@@ -29,6 +29,11 @@ public class Audio {
             nightStream = AudioSystem.getAudioInputStream(night);
             nightClip = AudioSystem.getClip();
             nightClip.open(nightStream);
+            
+            sun = new File("res/birds.wav");
+            sunStream = AudioSystem.getAudioInputStream(sun);
+            sunClip = AudioSystem.getClip();
+            sunClip.open(sunStream);
             
             
         } catch (Exception ex) {
@@ -73,5 +78,18 @@ public class Audio {
     
     public void stopNight(){
         nightClip.stop();
+    }
+    
+    public void playSun(){
+        try {
+            sunClip.start();
+            sunClip.loop(10);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void stopSun(){
+        sunClip.stop();
     }
 }

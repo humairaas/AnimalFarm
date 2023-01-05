@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
  *
  * @author User
  */
-public class Tree extends Decorator{
+public class Tree extends Decoration{
 
     public Tree() {
         name = "tree";

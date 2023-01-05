@@ -7,11 +7,14 @@ import javax.swing.ImageIcon;
  * @author User
  */
 public class Icon {
-    private ImageIcon grass, cloudy, night, rain, dark, barn;
+    private ImageIcon grass, cloudy, night, rain, dark, barn, menu;
 
     public Icon() {
         //Grass
         grass = new ImageIcon("res/farm.png");
+        
+        //Menu
+        menu = new ImageIcon("res/side_menu.png");
         
         //Night
         night = new ImageIcon("res/night.png");
@@ -31,6 +34,10 @@ public class Icon {
 
     public ImageIcon getGrass() {
         return grass;
+    }
+    
+    public ImageIcon getMenu() {
+        return menu;
     }
     
     public ImageIcon getBarn() {
