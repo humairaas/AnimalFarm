@@ -21,6 +21,8 @@ public class Farm extends JPanel implements ActionListener {
 
     public Farm() {
         el = new Element();
+        addKeyListener(new KeyHandler());
+        setFocusable(true);
     }
 
     public void start() {
