@@ -1,7 +1,6 @@
 package animalfarm;
 
-import java.util.Scanner;
-
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -14,8 +13,10 @@ public class AnimalFarm {
      */
     public static void main(String[] args) {
         Farm farm = new Farm(); 
+        
         Decorator tree = new Tree();
-        Animal cow = new Cow();
+        
+        WeatherFacade weather = new WeatherFacade(farm, tree);
 
         farm.start();
         
@@ -23,14 +24,9 @@ public class AnimalFarm {
         farm.setElement(tree, 1, 1);
         farm.setElement(tree, 2, 2);
         
-        Scanner s = new Scanner(System.in);
+        farm.showFarm();
         
-        
-        System.out.print("Rain?");
-        String ans = s.next();
-        if(ans.equals("y")){
-            farm.setIsRainy(true);
-        }
+        weather.Rainy();
     }
     
 }
