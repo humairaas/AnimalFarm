@@ -1,63 +1,77 @@
 package animalfarm;
 
-import java.awt.Image;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 /**
  *
  * @author User
  */
 public class Element {
-    private Image grass, cloudy, night, cow;
-    private ImageIcon rain, tree;
+    private ImageIcon grass, cloudy, night, cow, rain, tree, sunny, dark, farm;
 
     public Element() {
         //Grass
-        grass = new ImageIcon("res/grass.png").getImage();
+        farm = new ImageIcon("res/Farm.png");
+        
+        //Grass
+        grass = new ImageIcon("res/grass.png");
         
         //Night
-        night = new ImageIcon("res/night.png").getImage();
+        night = new ImageIcon("res/night.png");
         
         //Cloudy
-        cloudy = new ImageIcon("res/cloudy.png").getImage();
+        cloudy = new ImageIcon("res/cloudy1.png");
+        
+        //Sunny
+        sunny = new ImageIcon("res/sunny.png");
         
         //Rain
-        rain = new ImageIcon("res/rain.gif");
+        rain = new ImageIcon("res/rain5.gif");
+        
+        //Cloudy
+        dark = new ImageIcon("res/cloudy.png");
         
         //Tree
         tree = new ImageIcon("res/wind_tree.gif");
         
         //Cow
-        cow = new ImageIcon("res/cow.png").getImage();
+        cow = new ImageIcon("res/cow.png");
         
     }
 
-    public Image getGrass() {
+    public ImageIcon getGrass() {
         return grass;
     }
 
     public ImageIcon getRain() {
         return rain;
     }
+    
+    public ImageIcon getFarm() {
+        return farm;
+    }
+    
+    public ImageIcon getDark() {
+        return dark;
+    }
 
     public ImageIcon getTree() {
         return tree;
     }
 
-    public Image getCloudy() {
+    public ImageIcon getCloudy() {
         return cloudy;
     }
+    
+    public ImageIcon getSunny() {
+        return sunny;
+    }
 
-    public Image getNight() {
+    public ImageIcon getNight() {
         return night;
     }
 
-    public Image getCow() {
+    public ImageIcon getCow() {
         return cow;
     }
     
