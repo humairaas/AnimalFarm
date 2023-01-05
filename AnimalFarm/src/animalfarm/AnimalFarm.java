@@ -1,5 +1,3 @@
-
-
 package animalfarm;
 
 /**
@@ -15,7 +13,7 @@ public class AnimalFarm {
         Farm farm = new Farm();
         Decorator tree = new Tree("Tree");
         Animal cow = new Cow("Cow");
-        
+
         farm.setElement(tree.getImage(), 1, 3);
         farm.setElement(tree.getImage(), 1, 4);
         farm.setElement(tree.getImage(), 1, 5);
@@ -25,10 +23,10 @@ public class AnimalFarm {
         farm.setElement(tree.getImage(), 11, 5);
         farm.setElement(tree.getImage(), 11, 15);
         farm.setElement(cow.getImage(), 4, 10);
-        
+
         
         farm.start();
         farm.showFarm();
     }
-
+    
 }

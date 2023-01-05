@@ -27,7 +27,7 @@ not be used in advertising or otherwise to promote the sale, use or other
 dealings in this Software without prior written authorization from 
 Philippe-Henri Gosselin.
 
-*/
+ */
 package animalfarm;
 
 import java.awt.Frame;
