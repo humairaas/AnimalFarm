@@ -1,5 +1,6 @@
 package animalfarm;
 
+import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
@@ -7,73 +8,51 @@ import javax.swing.ImageIcon;
  * @author User
  */
 public class Element {
-    private ImageIcon grass, cloudy, night, cow, rain, tree, sunny, dark, farm;
+    private Image grass, cloudy, night, cow;
+    private ImageIcon rain, tree;
 
     public Element() {
         //Grass
-        farm = new ImageIcon("res/Farm.png");
-        
-        //Grass
-        grass = new ImageIcon("res/grass.png");
+        grass = new ImageIcon("res/farm.png").getImage();
         
         //Night
-        night = new ImageIcon("res/night.png");
+        night = new ImageIcon("res/night.png").getImage();
         
         //Cloudy
-        cloudy = new ImageIcon("res/cloudy1.png");
-        
-        //Sunny
-        sunny = new ImageIcon("res/sunny.png");
+        cloudy = new ImageIcon("res/cloudy.png").getImage();
         
         //Rain
-        rain = new ImageIcon("res/rain5.gif");
-        
-        //Cloudy
-        dark = new ImageIcon("res/cloudy.png");
+        rain = new ImageIcon("res/rain.gif");
         
         //Tree
         tree = new ImageIcon("res/wind_tree.gif");
         
         //Cow
-        cow = new ImageIcon("res/cow.png");
+        cow = new ImageIcon("res/cow.png").getImage();
         
     }
 
-    public ImageIcon getGrass() {
+    public Image getGrass() {
         return grass;
     }
 
     public ImageIcon getRain() {
         return rain;
     }
-    
-    public ImageIcon getFarm() {
-        return farm;
-    }
-    
-    public ImageIcon getDark() {
-        return dark;
-    }
 
     public ImageIcon getTree() {
         return tree;
     }
 
-    public ImageIcon getCloudy() {
+    public Image getCloudy() {
         return cloudy;
     }
-    
-    public ImageIcon getSunny() {
-        return sunny;
-    }
 
-    public ImageIcon getNight() {
+    public Image getNight() {
         return night;
     }
 
-    public ImageIcon getCow() {
+    public Image getCow() {
         return cow;
     }
-    
-    
 }

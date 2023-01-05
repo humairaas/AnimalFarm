@@ -1,23 +1,29 @@
 package animalfarm;
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
  * @author User
  */
-public class Farm extends JLabel implements ActionListener {
+public class Farm extends JPanel implements ActionListener {
 
     String weatherMode;
     String[][] farm = new String[17][25];
     private Element el;
     private final int size = 40;
+    private JButton button;
 
     public Farm() {
         this.weatherMode = "Sunny";
+        button = new JButton("Refresh");
+        setLayout(new BorderLayout());
+        add(button, BorderLayout.SOUTH);
         el = new Element();
     }
 
@@ -27,6 +33,7 @@ public class Farm extends JLabel implements ActionListener {
     }
 
     public void stop() {
+
     }
 
     @Override
@@ -39,20 +46,16 @@ public class Farm extends JLabel implements ActionListener {
         super.paint(g);
 
         //Draw initial farm
-        for (int row = 0; row < farm.length; row++) {
-            for (int col = 0; col < farm[row].length; col++) {
-                el.getGrass().paintIcon(this, g, col*size, row*size);
-            }
-        }
+        g.drawImage(el.getGrass(), 0, 0, null);
 
         //Windy tree
         for (int row = 0; row < farm.length; row++) {
             for (int col = 0; col < farm[row].length; col++) {
                 if (farm[row][col] != null && farm[row][col].equals("tree")) {
-                    el.getTree().paintIcon(this, g, col*size, row*size);
+                    el.getTree().paintIcon(this, g, col * size, row * size);
                 }
                 if (farm[row][col] != null && farm[row][col].equals("cow")) {
-                    el.getCow().paintIcon(this, g, col*size, row*size);
+                    g.drawImage(el.getCow(), col * size, row * size, null);
                 }
             }
         }
@@ -68,19 +71,13 @@ public class Farm extends JLabel implements ActionListener {
 //            //Night
 //            g.drawImage(el.getNight(), 0, 0, null);
     }
-    
-    public void paintRainy(Graphics g){
-        super.paint(g);
-        
-        el.getDark().paintIcon(this, g, 0, 0);
-        el.getRain().paintIcon(this, g, 0, 0);
-    }
 
     public String[][] getFarm() {
         return farm;
     }
 
     public void showFarm() {
+        System.out.println("Weather Mode: " + weatherMode);
         for (int row = 0; row < farm.length; row++) {
             System.out.println("");
             for (int col = 0; col < farm[row].length; col++) {

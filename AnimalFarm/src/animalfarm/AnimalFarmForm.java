@@ -14,17 +14,19 @@ import javax.swing.*;
  * @author haneyiskdr
  */
 public class AnimalFarmForm extends JFrame {
+    private final int size = 40;
     int treeClickCounter = 0;
     int pondClickCounter = 0;
     int hayClickCounter = 0;
-    Element el;
+   
+//    Element el;
 
     /**
      * Creates new form AnimalFarmForm
      */
     public AnimalFarmForm() {
         initComponents();
-        el = new Element();
+//        el = new Element(); 
     }
     
     /**
@@ -240,23 +242,23 @@ public class AnimalFarmForm extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jLabel12.setIcon(el.getSunny());
-        jLabel10.setIcon(el.getSunny());
+//        jLabel12.setIcon(el.getSunny());
+//        jLabel10.setIcon(el.getSunny());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jLabel12.setIcon(el.getSunny());
-        jLabel10.setIcon(el.getCloudy());
+//        jLabel12.setIcon(el.getSunny());
+//        jLabel10.setIcon(el.getCloudy());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jLabel12.setIcon(el.getSunny());
-        jLabel10.setIcon(el.getNight());
+//        jLabel12.setIcon(el.getSunny());
+//        jLabel10.setIcon(el.getNight());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jLabel12.setIcon(el.getDark());
-        jLabel10.setIcon(el.getRain());
+//        jLabel12.setIcon(el.getDark());
+//        jLabel10.setIcon(el.getRain());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -294,16 +296,16 @@ public class AnimalFarmForm extends JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        treeClickCounter++;
-        ImageIcon tree = new ImageIcon(getClass().getResource("/animalfarm/wind_tree.gif"));
-        if (treeClickCounter == 1) {
-            jLabel1.setIcon(tree);
-        } else if (treeClickCounter == 2) {
-            jLabel2.setIcon(tree);
-        } else if (treeClickCounter == 3) {
-            jLabel3.setIcon(tree);
-        }
+      
+//        treeClickCounter++;
+//        ImageIcon tree = new ImageIcon(getClass().getResource("/animalfarm/wind_tree.gif"));
+//        if (treeClickCounter == 1) {
+//            jLabel1.setIcon(tree);
+//        } else if (treeClickCounter == 2) {
+//            jLabel2.setIcon(tree);
+//        } else if (treeClickCounter == 3) {
+//            jLabel3.setIcon(tree);
+//        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jLabel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel1KeyPressed
