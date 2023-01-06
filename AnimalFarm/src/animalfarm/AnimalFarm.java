@@ -24,7 +24,7 @@ public class AnimalFarm {
         window.setFocusable(true);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
-
+        
         farm.showFarm();
         weather.Rainy();
     }
