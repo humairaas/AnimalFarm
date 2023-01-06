@@ -74,7 +74,7 @@ public class Farm extends JPanel implements ActionListener {
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 if (farm[row][col] != null) {
-                    farm[row][col].getImage().paintIcon(this, g, col * size, row * size);
+                    farm[row][col].getImage().paintIcon(this, g, col * size - (farm[row][col].getImage().getIconHeight() - size) , row * size - (farm[row][col].getImage().getIconHeight() - size));
                 }
             }
         }
