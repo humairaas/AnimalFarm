@@ -5,17 +5,18 @@ package animalfarm;
  * @author User
  */
 public class AnimalFarm {
+
     Farm farm;
     Decoration tree;
     WeatherFacade weather;
-    
+
     public AnimalFarm() {
-        farm = new Farm(); 
+        farm = new Farm();
         tree = new Tree();
         weather = new WeatherFacade(farm, tree);
     }
-    
-    public void start(){
+
+    public void start() {
         AWTWindow window = new AWTWindow();
         window.init("Animal Farm");
         window.add(farm);
@@ -26,5 +27,7 @@ public class AnimalFarm {
         
         farm.setElement(tree, 0, 0);
         farm.showFarm();
-    }    
+        weather.Rainy();
+    }
+    
 }

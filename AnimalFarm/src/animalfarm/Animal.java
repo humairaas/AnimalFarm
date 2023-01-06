@@ -1,12 +1,13 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
  * @author User
  */
-public abstract class Animal implements Element{
+public abstract class Animal implements Element {
+
     String name;
     ImageIcon image;
     String audio;

@@ -1,33 +1,34 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
  * @author User
  */
 public class Icon {
+
     private ImageIcon grass, cloudy, night, rain, dark, barn, menu;
 
     public Icon() {
         //Grass
         grass = new ImageIcon("res/farm.png");
-        
+
         //Menu
         menu = new ImageIcon("res/side_menu.png");
-        
+
         //Night
         night = new ImageIcon("res/night.png");
-        
+
         //Cloudy
         cloudy = new ImageIcon("res/cloudy.png");
-        
+
         //Rain
         rain = new ImageIcon("res/rain.gif");
-        
+
         //Dark
         dark = new ImageIcon("res/dark.png");
-        
+
         //Dark
         barn = new ImageIcon("res/barn.png");
     }
@@ -35,11 +36,11 @@ public class Icon {
     public ImageIcon getGrass() {
         return grass;
     }
-    
+
     public ImageIcon getMenu() {
         return menu;
     }
-    
+
     public ImageIcon getBarn() {
         return barn;
     }
@@ -55,8 +56,9 @@ public class Icon {
     public ImageIcon getNight() {
         return night;
     }
-    
+
     public ImageIcon getDark() {
         return dark;
     }
+    
 }

@@ -1,14 +1,18 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
  * @author User
  */
 public interface Element {
+
     String getName();
+
     void setName(String name);
+
     ImageIcon getImage();
+
     void setImage(ImageIcon icon);
 }

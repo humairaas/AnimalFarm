@@ -1,18 +1,20 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
  * @author User
  */
-public class Haystack extends Food{
+public class Haystack extends Decoration {
 
     public Haystack() {
         name = "haystack";
         image = new ImageIcon("res/haystack.png");
     }
 
-   
-    
+    public ImageIcon getHaystack() {
+        return image;
+    }
+
 }
