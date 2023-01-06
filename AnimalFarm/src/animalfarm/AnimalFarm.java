@@ -24,7 +24,7 @@ public class AnimalFarm {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         
-        farm.setElement(tree, 5, 5);
+        farm.setElement(tree, 0, 0);
         farm.showFarm();
     }    
 }
