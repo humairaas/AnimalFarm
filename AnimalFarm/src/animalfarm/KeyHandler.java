@@ -102,7 +102,7 @@ public class KeyHandler implements KeyListener {
             farm.setIsHaystack(true);
         }
         if (code == KeyEvent.VK_5) {
-            this.decoration = new Lights();
+            this.decoration = farm.lightsEl;
             farm.setIsLights(true);
         }
         if (code == KeyEvent.VK_6) {
@@ -110,11 +110,11 @@ public class KeyHandler implements KeyListener {
             farm.setIsPond(true);
         }
         if (code == KeyEvent.VK_7) {
-            this.decoration = new Bush();
+            this.decoration = farm.bushEl;
             farm.setIsBush(true);
         }
         if (code == KeyEvent.VK_8) {
-            this.decoration = new Tree();
+            this.decoration = farm.treeEl;
             farm.setIsTree(true);
         }
 

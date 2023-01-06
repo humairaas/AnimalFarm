@@ -19,15 +19,15 @@ public class Farm extends JPanel implements ActionListener {
     Element[][] farm = new Element[height][width];
 
     private final Icon el;
-    private Barn barnEl;
-    private Coop coopEl;
-    private Fence fenceEl;
-    private Haystack haystackEl;
-    private Lights lightsEl;
-    private Pond pondEl;
-    private Bush bushEl;
-    private Tree treeEl;
-    private Delete deleteEl;
+    Barn barnEl;
+    Coop coopEl;
+    Fence fenceEl;
+    Haystack haystackEl;
+    Light lightsEl;
+    Pond pondEl;
+    Bush bushEl;
+    Tree treeEl;
+    Delete deleteEl;
     private ImageIcon fenceImage;
     private final int size = 40;
 
@@ -45,18 +45,31 @@ public class Farm extends JPanel implements ActionListener {
     private boolean isTree = false;
     private boolean isDelete = false;
 
-    public Farm() {
+    public Farm(Barn barnEl, Coop coopEl, Fence fenceEl, Haystack haystackEl, Light lightsEl, Pond pondEl, Bush bushEl, Tree treeEl, Delete deleteEl) {
         el = new Icon();
-        barnEl = new Barn();
-        coopEl = new Coop();
-        fenceEl = new Fence();
-        haystackEl = new Haystack();
-        lightsEl = new Lights();
-        pondEl = new Pond();
-        bushEl = new Bush();
-        treeEl = new Tree();
-        deleteEl = new Delete();
+        this.barnEl = barnEl;
+        this.coopEl = coopEl;
+        this.fenceEl = fenceEl;
+        this.haystackEl = haystackEl;
+        this.lightsEl = lightsEl;
+        this.pondEl = pondEl;
+        this.bushEl = bushEl;
+        this.treeEl = treeEl;
+        this.deleteEl = deleteEl;
     }
+    
+//    public Farm() {
+//        el = new Icon();
+//        barnEl = new Barn();
+//        coopEl = new Coop();
+//        fenceEl = new Fence();
+//        haystackEl = new Haystack();
+//        lightsEl = new Light();
+//        pondEl = new Pond();
+//        bushEl = new Bush();
+//        treeEl = new Tree();
+//        deleteEl = new Delete();
+//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -137,7 +150,7 @@ public class Farm extends JPanel implements ActionListener {
         }
 
         //Menu
-        el.getMenu().paintIcon(this, g, 22 * size, 0);
+        el.getMenu().paintIcon(this, g, 21 * size, 0);
     }
     
     public void draw(Element element, Graphics g, int row, int col){

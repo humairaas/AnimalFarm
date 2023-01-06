@@ -6,9 +6,9 @@ import javax.swing.*;
  *
  * @author User
  */
-public class Lights extends Decoration {
+public class Light extends Decoration {
 
-    public Lights() {
+    public Light() {
         name = "lights";
         image = new ImageIcon("res/lamp_sun.png");
     }

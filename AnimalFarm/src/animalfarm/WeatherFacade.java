@@ -9,12 +9,14 @@ import javax.swing.*;
 public class WeatherFacade {
 
     Farm farm;
-    Decoration tree;
+    Decoration tree, light, bush;
     Audio audio;
 
-    public WeatherFacade(Farm farm, Decoration tree) {
+    public WeatherFacade(Farm farm, Decoration tree, Decoration light, Decoration bush) {
         this.farm = farm;
         this.tree = tree;
+        this.light = light;
+        this.bush = bush;
         audio = new Audio();
     }
 
@@ -25,6 +27,8 @@ public class WeatherFacade {
         farm.setIsNight(false);
 
         tree.setImage(new ImageIcon("res/tree.png"));
+        bush.setImage(new ImageIcon("res/bush.png"));
+        light.setImage(new ImageIcon("res/lamp_sun.png"));
 
         audio.stopRain();
         audio.stopNight();
@@ -39,6 +43,8 @@ public class WeatherFacade {
         farm.setIsNight(false);
 
         tree.setImage(new ImageIcon("res/tree.png"));
+        bush.setImage(new ImageIcon("res/bush.png"));
+        light.setImage(new ImageIcon("res/lamp_sun.png"));
 
         audio.stopSun();
         audio.stopRain();
@@ -53,6 +59,8 @@ public class WeatherFacade {
         farm.setIsNight(false);
 
         tree.setImage(new ImageIcon("res/wind_tree.gif"));
+        bush.setImage(new ImageIcon("res/wind_bush.gif"));
+        light.setImage(new ImageIcon("res/lamp_sun.png"));
 
         audio.stopSun();
         audio.stopRain();
@@ -67,6 +75,8 @@ public class WeatherFacade {
         farm.setIsNight(false);
 
         tree.setImage(new ImageIcon("res/wind_tree.gif"));
+        bush.setImage(new ImageIcon("res/wind_bush.gif"));
+        light.setImage(new ImageIcon("res/lamp_night.png"));
 
         audio.stopSun();
         audio.stopWind();
@@ -81,7 +91,10 @@ public class WeatherFacade {
         farm.setIsNight(true);
 
         tree.setImage(new ImageIcon("res/tree.png"));
-
+        bush.setImage(new ImageIcon("res/bush.png"));
+        light.setImage(new ImageIcon("res/lamp_night.png"));
+        
+        audio.stopSun();
         audio.stopWind();
         audio.stopRain();
         audio.playNight();

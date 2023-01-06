@@ -7,13 +7,30 @@ package animalfarm;
 public class AnimalFarm {
 
     Farm farm;
-    Decoration tree;
+    Barn barn;
+    Coop coop; 
+    Fence fence; 
+    Haystack haystack; 
+    Light light; 
+    Pond pond;
+    Bush bush; 
+    Tree tree;
+    Delete hammer;
     WeatherFacade weather;
 
     public AnimalFarm() {
-        farm = new Farm();
-        tree = new Tree();
-        weather = new WeatherFacade(farm, tree);
+        barn = new Barn();
+        coop = new Coop();
+        fence = new Fence();
+        haystack = new Haystack();
+        light = new Light();
+        pond = new Pond();
+        bush = new Bush();
+        tree= new Tree();
+        hammer = new Delete();
+        farm = new Farm(barn, coop, fence, haystack, light, pond, bush, tree, hammer);
+        
+        weather = new WeatherFacade(farm, tree, light, bush);
     }
 
     public void start() {
@@ -25,7 +42,6 @@ public class AnimalFarm {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         
-        farm.setElement(tree, 0, 0);
         farm.showFarm();
         weather.Rainy();
     }
