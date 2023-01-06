@@ -1,12 +1,13 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
  * @author User
  */
-public abstract class Decoration implements Element{
+public abstract class Decoration implements Element {
+
     String name;
     ImageIcon image;
 
@@ -32,4 +33,5 @@ public abstract class Decoration implements Element{
     public void setImage(ImageIcon image) {
         this.image = image;
     }
+    
 }

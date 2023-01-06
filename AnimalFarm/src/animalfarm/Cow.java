@@ -1,12 +1,12 @@
 package animalfarm;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
  * @author User
  */
-public class Cow extends Animal{
+public class Cow extends Animal {
 
     public Cow() {
         name = "cow";
@@ -14,6 +14,4 @@ public class Cow extends Animal{
         audio = "moo";
     }
 
-
-    
 }
