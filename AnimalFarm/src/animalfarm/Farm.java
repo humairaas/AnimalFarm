@@ -74,7 +74,7 @@ public class Farm extends JPanel implements ActionListener {
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 if (farm[row][col] != null) {
-                    farm[row][col].getImage().paintIcon(this, g, col * size, row * size - (farm[row][col].getImage().getIconHeight() - size));
+                    draw(farm[row][col], g, row, col);
                 }
             }
         }
@@ -100,36 +100,36 @@ public class Farm extends JPanel implements ActionListener {
         }
 
         if (isBarn) {
-            barnEl.getBarn().paintIcon(this, g, y * size, x * size - (barnEl.getImage().getIconHeight() - size));
+            draw(barnEl, g, x, y);
         }
 
         if (isCoop) {
-            coopEl.getCoop().paintIcon(this, g, y * size, x * size);
+            draw(coopEl, g, x, y);
         }
 
         if (isFence) {
             fenceImage = fenceEl.getFence(counter);
-            fenceImage.paintIcon(this, g, y * size, x * size);
+            draw(fenceEl, g, x, y);
         }
 
         if (isHaystack) {
-            haystackEl.getHaystack().paintIcon(this, g, y * size, x * size);
+            draw(haystackEl, g, x, y);
         }
 
         if (isLights) {
-            lightsEl.getLights().paintIcon(this, g, y * size, x * size);
+            draw(lightsEl, g, x, y);
         }
 
         if (isPond) {
-            pondEl.getPond().paintIcon(this, g, y * size, x * size - (pondEl.getImage().getIconHeight() - size));
+            draw(pondEl, g, x, y);
         }
 
         if (isBush) {
-            bushEl.getBush().paintIcon(this, g, y * size, x * size);
+            draw(bushEl, g, x, y);
         }
 
         if (isTree) {
-            treeEl.getTree().paintIcon(this, g, y * size, x * size  - (treeEl.getImage().getIconHeight() - size));
+            draw(treeEl, g, x, y);
         }
 
         if (isDelete) {
@@ -138,6 +138,10 @@ public class Farm extends JPanel implements ActionListener {
 
         //Menu
         el.getMenu().paintIcon(this, g, 22 * size, 0);
+    }
+    
+    public void draw(Element element, Graphics g, int row, int col){
+        element.getImage().paintIcon(this, g, col * size , row * size - (element.getImage().getIconHeight() - size));
     }
 
     public void setIsRainy(boolean isRainy) {
