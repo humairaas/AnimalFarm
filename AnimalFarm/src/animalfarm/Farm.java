@@ -74,7 +74,7 @@ public class Farm extends JPanel implements ActionListener {
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 if (farm[row][col] != null) {
-                    farm[row][col].getImage().paintIcon(this, g, col * size - (farm[row][col].getImage().getIconHeight() - size) , row * size - (farm[row][col].getImage().getIconHeight() - size));
+                    farm[row][col].getImage().paintIcon(this, g, col * size, row * size - (farm[row][col].getImage().getIconHeight() - size));
                 }
             }
         }
@@ -100,7 +100,7 @@ public class Farm extends JPanel implements ActionListener {
         }
 
         if (isBarn) {
-            barnEl.getBarn().paintIcon(this, g, y * size, x * size);
+            barnEl.getBarn().paintIcon(this, g, y * size, x * size - (barnEl.getImage().getIconHeight() - size));
         }
 
         if (isCoop) {
@@ -121,7 +121,7 @@ public class Farm extends JPanel implements ActionListener {
         }
 
         if (isPond) {
-            pondEl.getPond().paintIcon(this, g, y * size, x * size);
+            pondEl.getPond().paintIcon(this, g, y * size, x * size - (pondEl.getImage().getIconHeight() - size));
         }
 
         if (isBush) {
@@ -129,7 +129,7 @@ public class Farm extends JPanel implements ActionListener {
         }
 
         if (isTree) {
-            treeEl.getTree().paintIcon(this, g, y * size, x * size);
+            treeEl.getTree().paintIcon(this, g, y * size, x * size  - (treeEl.getImage().getIconHeight() - size));
         }
 
         if (isDelete) {

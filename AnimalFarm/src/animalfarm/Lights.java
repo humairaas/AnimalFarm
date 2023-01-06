@@ -10,7 +10,7 @@ public class Lights extends Decoration {
 
     public Lights() {
         name = "lights";
-        image = new ImageIcon("res/lights.png");
+        image = new ImageIcon("res/lamp_sun.png");
     }
 
     public ImageIcon getLights() {
