@@ -16,6 +16,11 @@ public class AnimalFarm {
     Bush bush; 
     Tree tree;
     Delete hammer;
+    Cow cow;                                
+    Sheep sheep;                            
+    Duck duck;                              
+    Chicken chicken;                        
+    Horse horse;                            
     WeatherFacade weather;
 
     public AnimalFarm() {
@@ -28,7 +33,12 @@ public class AnimalFarm {
         bush = new Bush();
         tree= new Tree();
         hammer = new Delete();
-        farm = new Farm(barn, coop, fence, haystack, light, pond, bush, tree, hammer);
+        cow = new Cow();                            
+        sheep = new Sheep();                        
+        duck = new Duck();                          
+        chicken = new Chicken();                    
+        horse = new Horse();                        
+        farm = new Farm(barn, coop, fence, haystack, light, pond, bush, tree, hammer, cow, sheep, duck, chicken, horse); 
         
         weather = new WeatherFacade(farm, tree, light, bush);
     }
