@@ -74,6 +74,11 @@ public class KeyHandler implements KeyListener {
             farm.setIsBush(false);
             farm.setIsTree(false);
             farm.setIsDelete(false);
+            farm.setIsCow(false);                                           
+            farm.setIsSheep(false);                                       
+            farm.setIsDuck(false);                                              
+            farm.setIsChicken(false);                                            
+            farm.setIsHorse(false);                                                
             farm.setX(8);
             farm.setY(12);
             farm.setCounter(0);
@@ -123,6 +128,32 @@ public class KeyHandler implements KeyListener {
             farm.setIsDelete(true);
         }
 
+        //Animal
+        if (code == KeyEvent.VK_A) {
+            this.decoration = new Cow();                                                
+            farm.setIsCow(true);
+        }
+        
+        if (code == KeyEvent.VK_S) {
+            this.decoration = new Sheep();                                              
+            farm.setIsSheep(true);
+        }
+        
+        if (code == KeyEvent.VK_D) {
+            this.decoration = new Duck();                                                 
+            farm.setIsDuck(true);
+        }
+        
+        if (code == KeyEvent.VK_F) {
+            this.decoration = new Chicken();                                              
+            farm.setIsChicken(true);
+        }
+        
+        if (code == KeyEvent.VK_G) {
+            this.decoration = new Horse();                                               
+            farm.setIsHorse(true);
+        }
+        
         // Control weather
         if (code == KeyEvent.VK_Q) {
             weather.Sunny();
