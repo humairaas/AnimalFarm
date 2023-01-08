@@ -15,7 +15,7 @@ public class KeyHandler implements KeyListener {
     ImageIcon image;
     Farm farm;
 
-    private int speedX = 0, speedY = 0;
+    int speedX, speedY;
 
     public KeyHandler(Farm farm, WeatherFacade weather) {
         this.farm = farm;
