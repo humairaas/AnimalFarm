@@ -6,7 +6,7 @@ import javax.swing.*;
  *
  * @author User
  */
-public class Chicken extends Decoration {
+public class Chicken extends Animal {
 
     public Chicken() {
         name = "chicken";
