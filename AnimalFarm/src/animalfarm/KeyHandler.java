@@ -5,13 +5,14 @@ import javax.swing.*;
 
 /**
  *
- * @author haneyiskdr
+ * @author ashiq
  */
 public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
     WeatherFacade weather;
     Decoration decoration;
+    Animal animal;
     ImageIcon image;
     Farm farm;
 
@@ -65,6 +66,7 @@ public class KeyHandler implements KeyListener {
                 this.decoration.setImage(new ImageIcon("res/empty.png"));
             }
             farm.setElement(decoration, farm.x, farm.y);
+            farm.setElement(animal, farm.x, farm.y);
             farm.setIsBarn(false);
             farm.setIsCoop(false);
             farm.setIsFence(false);
@@ -74,16 +76,28 @@ public class KeyHandler implements KeyListener {
             farm.setIsBush(false);
             farm.setIsTree(false);
             farm.setIsDelete(false);
-            farm.setIsCow(false);                                           
+            farm.setIsCow(false);                                          
             farm.setIsSheep(false);                                       
-            farm.setIsDuck(false);                                              
+            farm.setIsDuck(false);                                               
             farm.setIsChicken(false);                                            
-            farm.setIsHorse(false);                                                
+            farm.setIsHorse(false);                                               
             farm.setX(8);
             farm.setY(12);
             farm.setCounter(0);
         }
 
+        if (code == KeyEvent.VK_ENTER) {
+                
+            farm.setElement(animal, farm.x, farm.y);
+            farm.setIsCow(false);                                         
+            farm.setIsSheep(false);                                      
+            farm.setIsDuck(false);                                               
+            farm.setIsChicken(false);                                            
+            farm.setIsHorse(false);                                                
+            farm.setX(8);
+            farm.setY(12);
+        }
+        
         if (code == KeyEvent.VK_1) {
             this.decoration = new Barn();
             farm.setIsBarn(true);
@@ -130,27 +144,27 @@ public class KeyHandler implements KeyListener {
 
         //Animal
         if (code == KeyEvent.VK_A) {
-            this.decoration = new Cow();                                                
+            this.animal = new Cow();                                                 
             farm.setIsCow(true);
         }
         
         if (code == KeyEvent.VK_S) {
-            this.decoration = new Sheep();                                              
+            this.animal = new Sheep();                                               
             farm.setIsSheep(true);
         }
         
         if (code == KeyEvent.VK_D) {
-            this.decoration = new Duck();                                                 
+            this.animal = new Duck();                                                 
             farm.setIsDuck(true);
         }
         
         if (code == KeyEvent.VK_F) {
-            this.decoration = new Chicken();                                              
+            this.animal = new Chicken();                                               
             farm.setIsChicken(true);
         }
         
         if (code == KeyEvent.VK_G) {
-            this.decoration = new Horse();                                               
+            this.animal = new Horse();                                               
             farm.setIsHorse(true);
         }
         
