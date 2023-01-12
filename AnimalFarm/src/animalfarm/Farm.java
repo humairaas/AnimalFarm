@@ -72,19 +72,6 @@ public class Farm extends JPanel implements ActionListener {
         this.chickenEl = chickenEl;                    
         this.horseEl = horseEl;                          
     }
-    
-//    public Farm() {
-//        el = new Icon();
-//        barnEl = new Barn();
-//        coopEl = new Coop();
-//        fenceEl = new Fence();
-//        haystackEl = new Haystack();
-//        lightsEl = new Light();
-//        pondEl = new Pond();
-//        bushEl = new Bush();
-//        treeEl = new Tree();
-//        deleteEl = new Delete();
-//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -127,61 +114,53 @@ public class Farm extends JPanel implements ActionListener {
             el.getNight().paintIcon(this, g, 0, 0);
         }
 
+        // Decorations
         if (isBarn) {
             draw(barnEl, g, x, y);
         }
-
         if (isCoop) {
             draw(coopEl, g, x, y);
         }
-
         if (isFence) {
             fenceImage = fenceEl.getFence(counter);
             draw(fenceEl, g, x, y);
         }
-
         if (isHaystack) {
             draw(haystackEl, g, x, y);
         }
-
         if (isLights) {
             draw(lightsEl, g, x, y);
         }
-
         if (isPond) {
             draw(pondEl, g, x, y);
         }
-
         if (isBush) {
             draw(bushEl, g, x, y);
         }
-
         if (isTree) {
             draw(treeEl, g, x, y);
         }
-
         if (isDelete) {
             deleteEl.getDelete().paintIcon(this, g, y * size, x * size);
         }
+        
+        // Animals
         if (isCow) {
             draw(cowEl, g, x, y);                                       
         }
-        
         if (isSheep) {
             draw(sheepEl, g, x, y);                                       
         }
-        
         if (isDuck) {
             draw(duckEl, g, x, y);                                    
         }
-        
         if (isChicken) {
             draw(chickenEl, g, x, y);                                      
         }
-        
         if (isHorse) {
             draw(horseEl, g, x, y);                                      
         }
+        
         //Menu
         el.getMenu().paintIcon(this, g, 21 * size, 0);
     }
@@ -247,7 +226,7 @@ public class Farm extends JPanel implements ActionListener {
     }
     
     public void setIsSheep(boolean isSheep) {
-        this.isSheep = isSheep;                                                            
+        this.isSheep = isSheep;                                                       
     }
 
     public void setIsDuck(boolean isGoat) {
@@ -260,6 +239,23 @@ public class Farm extends JPanel implements ActionListener {
 
     public void setIsHorse(boolean isCat) {
         this.isHorse = isCat;                                                             
+    }
+    
+    public void setAllFalse() {
+        this.isBarn = false;
+        this.isCoop = false;
+        this.isFence = false;
+        this.isHaystack = false;
+        this.isLights = false;
+        this.isPond = false;
+        this.isBush = false;
+        this.isTree = false;
+        this.isDelete = false;
+        this.isCow = false;        
+        this.isSheep = false;
+        this.isDuck = false;
+        this.isChicken = false;
+        this.isHorse = false;
     }
     
     public int getCounter() {

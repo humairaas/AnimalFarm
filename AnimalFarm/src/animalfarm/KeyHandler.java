@@ -5,15 +5,15 @@ import javax.swing.*;
 
 /**
  *
- * @author ashiq
+ * @author User
  */
 public class KeyHandler implements KeyListener {
 
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
+    DecorationFactory factory;
     WeatherFacade weather;
     Decoration decoration;
-    Animal animal;
     ImageIcon image;
+    Animal animal;
     Farm farm;
 
     int speedX, speedY;
@@ -21,6 +21,7 @@ public class KeyHandler implements KeyListener {
     public KeyHandler(Farm farm, WeatherFacade weather) {
         this.farm = farm;
         this.weather = weather;
+        factory = new DecorationFactory();
     }
 
     @Override
@@ -33,31 +34,27 @@ public class KeyHandler implements KeyListener {
         int code = e.getKeyCode();
 
         if (code == KeyEvent.VK_UP) {
-            upPressed = true;
             farm.move(-1, 0);
             speedX = -1;
             speedY = 0;
         }
         if (code == KeyEvent.VK_DOWN) {
-            downPressed = true;
             farm.move(1, 0);
             speedX = 1;
             speedY = 0;
         }
         if (code == KeyEvent.VK_LEFT) {
-            leftPressed = true;
             farm.move(0, -1);
             speedX = 0;
             speedY = -1;
         }
         if (code == KeyEvent.VK_RIGHT) {
-            rightPressed = true;
             farm.move(0, 1);
             speedX = 0;
             speedY = 1;
         }
 
-        // Set decoration place
+        // Control decoration
         if (code == KeyEvent.VK_SPACE) {
             if (this.decoration.name.equals("fence")) {
                 this.decoration.setImage(farm.getFenceImage());
@@ -66,108 +63,100 @@ public class KeyHandler implements KeyListener {
                 this.decoration.setImage(new ImageIcon("res/empty.png"));
             }
             farm.setElement(decoration, farm.x, farm.y);
-            farm.setElement(animal, farm.x, farm.y);
-            farm.setIsBarn(false);
-            farm.setIsCoop(false);
-            farm.setIsFence(false);
-            farm.setIsHaystack(false);
-            farm.setIsLights(false);
-            farm.setIsPond(false);
-            farm.setIsBush(false);
-            farm.setIsTree(false);
-            farm.setIsDelete(false);
-            farm.setIsCow(false);                                          
-            farm.setIsSheep(false);                                       
-            farm.setIsDuck(false);                                               
-            farm.setIsChicken(false);                                            
-            farm.setIsHorse(false);                                               
+            farm.setAllFalse();
             farm.setX(8);
             farm.setY(12);
             farm.setCounter(0);
         }
-
-        if (code == KeyEvent.VK_ENTER) {
-                
-            farm.setElement(animal, farm.x, farm.y);
-            farm.setIsCow(false);                                         
-            farm.setIsSheep(false);                                      
-            farm.setIsDuck(false);                                               
-            farm.setIsChicken(false);                                            
-            farm.setIsHorse(false);                                                
-            farm.setX(8);
-            farm.setY(12);
-        }
-        
         if (code == KeyEvent.VK_1) {
-            this.decoration = new Barn();
+            farm.setAllFalse();
+            this.decoration = factory.createDecoration("BARN");
             farm.setIsBarn(true);
         }
         if (code == KeyEvent.VK_2) {
-            this.decoration = new Coop();
+            farm.setAllFalse();
+            this.decoration = factory.createDecoration("COOP");
             farm.setIsCoop(true);
         }
         if (code == KeyEvent.VK_3) {
+            farm.setAllFalse();
             if (farm.getCounter() == 8) {
                 farm.setCounter(0);
             }
             int counter = farm.getCounter();
             counter++;
             farm.setCounter(counter);
-            this.decoration = new Fence();
+            this.decoration = factory.createDecoration("FENCE");
             farm.setIsFence(true);
         }
         if (code == KeyEvent.VK_4) {
-            this.decoration = new Haystack();
+            farm.setAllFalse();
+            this.decoration = factory.createDecoration("HAYSTACK");
             farm.setIsHaystack(true);
         }
         if (code == KeyEvent.VK_5) {
+            farm.setAllFalse();
             this.decoration = farm.lightsEl;
             farm.setIsLights(true);
         }
         if (code == KeyEvent.VK_6) {
-            this.decoration = new Pond();
+            farm.setAllFalse();
+            this.decoration = factory.createDecoration("POND");
             farm.setIsPond(true);
         }
         if (code == KeyEvent.VK_7) {
+            farm.setAllFalse();
             this.decoration = farm.bushEl;
             farm.setIsBush(true);
         }
         if (code == KeyEvent.VK_8) {
+            farm.setAllFalse();
             this.decoration = farm.treeEl;
             farm.setIsTree(true);
         }
-
         if (code == KeyEvent.VK_9) {
-            this.decoration = new Delete();
+            farm.setAllFalse();
+            this.decoration = factory.createDecoration("DELETE");
             farm.setIsDelete(true);
         }
 
-        //Animal
+        // Control animal
+        if (code == KeyEvent.VK_ENTER) {
+            farm.setElement(animal, farm.x, farm.y);
+            farm.setAllFalse();
+            farm.setX(8);
+            farm.setY(12);
+        }
         if (code == KeyEvent.VK_A) {
-            this.animal = new Cow();                                                 
+            farm.setAllFalse();
+            this.animal = new Cow();
             farm.setIsCow(true);
         }
-        
+
         if (code == KeyEvent.VK_S) {
-            this.animal = new Sheep();                                               
+            farm.setAllFalse();
+            this.animal = new Sheep();
             farm.setIsSheep(true);
         }
-        
+
         if (code == KeyEvent.VK_D) {
-            this.animal = new Duck();                                                 
+            farm.setAllFalse();
+            this.animal = new Duck();
             farm.setIsDuck(true);
         }
-        
+
         if (code == KeyEvent.VK_F) {
-            this.animal = new Chicken();                                               
+            farm.setAllFalse();
+            this.animal = new Chicken();
             farm.setIsChicken(true);
         }
-        
+
         if (code == KeyEvent.VK_G) {
-            this.animal = new Horse();                                               
+            farm.setAllFalse();
+            this.animal = new Horse();
             farm.setIsHorse(true);
         }
-        
+
         // Control weather
         if (code == KeyEvent.VK_Q) {
             weather.Sunny();
@@ -193,20 +182,6 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        int code = e.getKeyCode();
 
-        if (code == KeyEvent.VK_UP) {
-            upPressed = false;
-        }
-        if (code == KeyEvent.VK_DOWN) {
-            downPressed = false;
-        }
-        if (code == KeyEvent.VK_LEFT) {
-            leftPressed = false;
-        }
-        if (code == KeyEvent.VK_RIGHT) {
-            rightPressed = false;
-        }
     }
-    
 }
