@@ -10,6 +10,7 @@ import javax.swing.*;
 public class KeyHandler implements KeyListener {
 
     WeatherFacade weather;
+    DecorationFactory dfactory;
     Decoration decoration;
     ImageIcon image;
     Animal animal;
@@ -20,6 +21,7 @@ public class KeyHandler implements KeyListener {
     public KeyHandler(Farm farm, WeatherFacade weather) {
         this.farm = farm;
         this.weather = weather;
+        this.dfactory = new DecorationFactory();
     }
 
     @Override
@@ -57,13 +59,8 @@ public class KeyHandler implements KeyListener {
             if (this.decoration != null) {
                 if (this.decoration.name.equals("fence")) {
                     this.decoration.setImage(farm.getFenceImage());
-                }
-                else if (this.decoration.name.equals("delete")) {
-                    if (this.decoration != null) {
-                        this.decoration.setImage(new ImageIcon("res/empty.png"));
-                    } else {
-                        this.animal.setImage(new ImageIcon("res/empty.png"));
-                    }
+                } else if (this.decoration.name.equals("delete")) {
+                    this.decoration.setImage(new ImageIcon("res/empty.png"));
                 }
             }
             if (this.decoration != null) {
@@ -94,7 +91,7 @@ public class KeyHandler implements KeyListener {
             int counter = farm.getCounter();
             counter++;
             farm.setCounter(counter);
-            this.decoration = farm.fenceEl;
+            this.decoration = dfactory.createDecoration("fence");
             farm.setIsFence(true);
         }
         if (code == KeyEvent.VK_4) {
@@ -124,7 +121,7 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_9) {
             farm.setAllFalse();
-            this.decoration = farm.deleteEl;
+            this.decoration = dfactory.createDecoration("delete");
             farm.setIsDelete(true);
         }
 
