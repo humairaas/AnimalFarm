@@ -19,20 +19,10 @@ public class Farm extends JPanel implements ActionListener {
     Element[][] farm = new Element[height][width];
 
     private final Icon el;
-    Barn barnEl;
-    Coop coopEl;
-    Fence fenceEl;
-    Haystack haystackEl;
-    Light lightsEl;
-    Pond pondEl;
-    Bush bushEl;
-    Tree treeEl;
+    Decoration barnEl, bushEl, coopEl, haystackEl, lightsEl, pondEl, treeEl;
+    Animal chickenEl, cowEl, duckEl, horseEl, sheepEl;
     Delete deleteEl;
-    Cow cowEl;                  
-    Sheep sheepEl;              
-    Duck duckEl;              
-    Chicken chickenEl;                  
-    Horse horseEl;                  
+    Fence fenceEl;                
     private ImageIcon fenceImage;
     private final int size = 40;
 
@@ -55,22 +45,22 @@ public class Farm extends JPanel implements ActionListener {
     private boolean isChicken = false;         
     private boolean isHorse = false;         
 
-    public Farm(Barn barnEl, Coop coopEl, Fence fenceEl, Haystack haystackEl, Light lightsEl, Pond pondEl, Bush bushEl, Tree treeEl, Delete deleteEl, Cow cowEl, Sheep sheepEl, Duck ducktEl, Chicken chickenEl, Horse horseEl) {
+    public Farm(Decoration barnEl, Decoration bushEl, Decoration coopEl, Decoration haystackEl, Decoration lightsEl, Decoration pondEl, Decoration treeEl, Animal chickenEl, Animal cowEl, Animal duckEl, Animal horseEl, Animal sheepEl) {
         el = new Icon();
         this.barnEl = barnEl;
+        this.bushEl = bushEl;
         this.coopEl = coopEl;
-        this.fenceEl = fenceEl;
+        this.deleteEl = new Delete();
+        this.fenceEl = new Fence();
         this.haystackEl = haystackEl;
         this.lightsEl = lightsEl;
         this.pondEl = pondEl;
-        this.bushEl = bushEl;
         this.treeEl = treeEl;
-        this.deleteEl = deleteEl;
-        this.cowEl = cowEl;                              
-        this.sheepEl = sheepEl;                         
-        this.duckEl = ducktEl;                          
-        this.chickenEl = chickenEl;                    
-        this.horseEl = horseEl;                          
+        this.chickenEl = chickenEl;
+        this.cowEl = cowEl;
+        this.duckEl = duckEl;                          
+        this.horseEl = horseEl;
+        this.sheepEl = sheepEl;  
     }
 
     @Override
@@ -229,16 +219,16 @@ public class Farm extends JPanel implements ActionListener {
         this.isSheep = isSheep;                                                       
     }
 
-    public void setIsDuck(boolean isGoat) {
-        this.isDuck = isGoat;                                                             
+    public void setIsDuck(boolean isDuck) {
+        this.isDuck = isDuck;                                                             
     }
     
     public void setIsChicken(boolean isChicken) {
         this.isChicken = isChicken;                                                            
     }
 
-    public void setIsHorse(boolean isCat) {
-        this.isHorse = isCat;                                                             
+    public void setIsHorse(boolean isHorse) {
+        this.isHorse = isHorse;                                                             
     }
     
     public void setAllFalse() {
