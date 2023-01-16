@@ -10,6 +10,7 @@ import javax.swing.*;
 public class KeyHandler implements KeyListener {
 
     WeatherFacade weather;
+    AnimalFactory afactory;
     DecorationFactory dfactory;
     Decoration decoration;
     ImageIcon image;
@@ -18,10 +19,11 @@ public class KeyHandler implements KeyListener {
 
     int speedX, speedY;
 
-    public KeyHandler(Farm farm, WeatherFacade weather) {
+    public KeyHandler(AnimalFactory afactory, DecorationFactory dfactory, Farm farm, WeatherFacade weather) {
         this.farm = farm;
         this.weather = weather;
-        this.dfactory = new DecorationFactory();
+        this.afactory = afactory;
+        this.dfactory = dfactory;
     }
 
     @Override
@@ -66,7 +68,8 @@ public class KeyHandler implements KeyListener {
             if (this.decoration != null) {
                 farm.setElement(decoration, farm.x, farm.y);
             } else {
-                farm.setElement(animal, farm.x, farm.y);
+                // farm.setElement(animal, farm.x, farm.y);
+                farm.setElement(afactory.createAnimal(""))
             }
             farm.setAllFalse();
             farm.setX(8);

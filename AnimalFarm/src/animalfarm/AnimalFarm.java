@@ -6,9 +6,9 @@ package animalfarm;
  */
 public class AnimalFarm {
 
-    Farm farm;
-    AnimalFactory afactory;
-    DecorationFactory dfactory;
+    static Farm farm;
+    static AnimalFactory afactory;
+    static DecorationFactory dfactory;
     Decoration barn, bush, coop, delete, fence, haystack, light, pond, tree; 
     Animal chicken, cow, duck, horse, sheep;                  
     WeatherFacade weather;
@@ -37,13 +37,17 @@ public class AnimalFarm {
         AWTWindow window = new AWTWindow();
         window.init("Animal Farm");
         window.add(farm);
-        window.addKeyListener(new KeyHandler(farm, weather));
+        window.addKeyListener(new KeyHandler(afactory, dfactory, farm, weather));
         window.setFocusable(true);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         
         farm.showFarm();
         weather.Rainy();
+    }
+
+    public static Farm getFarmInstance() {
+        return farm;
     }
     
 }
