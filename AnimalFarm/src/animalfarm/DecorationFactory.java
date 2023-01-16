@@ -10,27 +10,27 @@ package animalfarm;
  */
 public class DecorationFactory {
 
-    public Decoration createDecoration(String decorationType) {
+    public Decoration createDecoration(ElementEnum decorationType) {
         if (decorationType == null) {
             return null;
         }
-        if (decorationType.equalsIgnoreCase("BARN")) {
+        if (decorationType == ElementEnum.BARN) {
             return new Barn();
-        } else if (decorationType.equalsIgnoreCase("BUSH")) {
+        } else if (decorationType == ElementEnum.BUSH) {
             return new Bush();
-        } else if (decorationType.equalsIgnoreCase("COOP")) {
+        } else if (decorationType == ElementEnum.COOP) {
             return new Coop();
-        } else if (decorationType.equalsIgnoreCase("DELETE")) {
+        } else if (decorationType == ElementEnum.DELETE) {
             return new Delete();
-        } else if (decorationType.equalsIgnoreCase("FENCE")) {
+        } else if (decorationType == ElementEnum.FENCE) {
             return new Fence();
-        } else if (decorationType.equalsIgnoreCase("HAYSTACK")) {
+        } else if (decorationType == ElementEnum.HAYSTACK) {
             return new Haystack();
-        } else if (decorationType.equalsIgnoreCase("LIGHT")) {
+        } else if (decorationType == ElementEnum.LIGHT) {
             return new Light();
-        } else if (decorationType.equalsIgnoreCase("POND")) {
+        } else if (decorationType == ElementEnum.POND) {
             return new Pond();
-        } else if (decorationType.equalsIgnoreCase("TREE")) {
+        } else if (decorationType == ElementEnum.TREE) {
             return new Tree();
         }
         return null;

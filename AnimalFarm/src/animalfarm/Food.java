@@ -8,19 +8,19 @@ import javax.swing.*;
  */
 public abstract class Food implements Element {
 
-    String name;
+    ElementEnum name;
     ImageIcon image;
 
     public Food() {
     }
 
     @Override
-    public String getName() {
+    public ElementEnum getName() {
         return name;
     }
 
     @Override
-    public void setName(String name) {
+    public void setName(ElementEnum name) {
         this.name = name;
     }
 

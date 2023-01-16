@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Delete extends Decoration {
 
     public Delete() {
-        name = "delete";
+        name = ElementEnum.DELETE;
     }
 
     public ImageIcon getDelete() {

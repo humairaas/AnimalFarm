@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Horse extends Animal {
 
     public Horse() {
-        name = "horse";
+        name = ElementEnum.HORSE;
         image = new ImageIcon("res/horse.png");
         // audio = "reeeee";
         }

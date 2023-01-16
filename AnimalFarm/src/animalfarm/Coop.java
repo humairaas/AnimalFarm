@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Coop extends Decoration {
 
     public Coop() {
-        name = "coop";
+        name = ElementEnum.COOP;
         image = new ImageIcon("res/coop.png");
     }
 

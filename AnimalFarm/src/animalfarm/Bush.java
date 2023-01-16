@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Bush extends Decoration {
 
     public Bush() {
-        name = "bush";
+        name = ElementEnum.BUSH;
         image = new ImageIcon("res/bush.png");
     }
 

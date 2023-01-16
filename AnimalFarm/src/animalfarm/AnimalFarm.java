@@ -16,13 +16,13 @@ public class AnimalFarm {
     public AnimalFarm() {
         afactory = new AnimalFactory();
         dfactory = new DecorationFactory();
-        barn = dfactory.createDecoration("barn");
-        bush = dfactory.createDecoration("bush");
-        coop = dfactory.createDecoration("coop");
-        haystack = dfactory.createDecoration("haystack");
-        light = dfactory.createDecoration("light");
-        pond = dfactory.createDecoration("pond");
-        tree = dfactory.createDecoration("tree");
+        barn = dfactory.createDecoration(ElementEnum.BARN);
+        bush = dfactory.createDecoration(ElementEnum.BUSH);
+        coop = dfactory.createDecoration(ElementEnum.COOP);
+        haystack = dfactory.createDecoration(ElementEnum.HAYSTACK);
+        light = dfactory.createDecoration(ElementEnum.LIGHT);
+        pond = dfactory.createDecoration(ElementEnum.POND);
+        tree = dfactory.createDecoration(ElementEnum.TREE);
 
         chicken = afactory.createAnimal(ElementEnum.CHICKEN);
         cow = afactory.createAnimal(ElementEnum.COW);

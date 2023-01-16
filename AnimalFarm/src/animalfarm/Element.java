@@ -8,9 +8,9 @@ import javax.swing.*;
  */
 public interface Element {
 
-    String getName();
+    ElementEnum getName();
 
-    void setName(String name);
+    void setName(ElementEnum name);
 
     ImageIcon getImage();
 

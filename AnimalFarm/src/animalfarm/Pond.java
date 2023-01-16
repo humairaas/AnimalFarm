@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Pond extends Decoration {
 
     public Pond() {
-        name = "pond";
+        name = ElementEnum.POND;
         image = new ImageIcon("res/pond.png");
     }
 

@@ -95,7 +95,7 @@ public class KeyHandler implements KeyListener {
             int counter = farm.getCounter();
             counter++;
             farm.setCounter(counter);
-            this.decoration = dfactory.createDecoration("fence");
+            this.decoration = dfactory.createDecoration(ElementEnum.FENCE);
             farm.setIsFence(true);
         }
         if (code == KeyEvent.VK_4) {
@@ -125,7 +125,7 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_9) {
             farm.setAllFalse();
-            this.decoration = dfactory.createDecoration("delete");
+            this.decoration = dfactory.createDecoration(ElementEnum.DELETE);
             farm.setIsDelete(true);
         }
 

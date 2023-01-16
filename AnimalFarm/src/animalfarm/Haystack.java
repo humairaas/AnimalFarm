@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Haystack extends Decoration {
 
     public Haystack() {
-        name = "haystack";
+        name = ElementEnum.HAYSTACK;
         image = new ImageIcon("res/haystack.png");
     }
 

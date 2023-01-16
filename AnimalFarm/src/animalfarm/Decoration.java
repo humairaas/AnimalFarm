@@ -8,19 +8,19 @@ import javax.swing.*;
  */
 public abstract class Decoration implements Element {
 
-    String name;
+    ElementEnum name;
     ImageIcon image;
 
     public Decoration() {
     }
 
     @Override
-    public String getName() {
+    public ElementEnum getName() {
         return name;
     }
 
     @Override
-    public void setName(String name) {
+    public void setName(ElementEnum name) {
         this.name = name;
     }
 

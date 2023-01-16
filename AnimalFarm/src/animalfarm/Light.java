@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Light extends Decoration {
 
     public Light() {
-        name = "lights";
+        name = ElementEnum.LIGHT;
         image = new ImageIcon("res/lamp_sun.png");
     }
 
