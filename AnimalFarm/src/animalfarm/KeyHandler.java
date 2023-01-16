@@ -34,6 +34,7 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
+        ElementEnum currentElementEnum = farm.getCurrentElementEnum();
 
         if (code == KeyEvent.VK_UP) {
             farm.move(-1, 0);
@@ -68,9 +69,9 @@ public class KeyHandler implements KeyListener {
             if (this.decoration != null) {
                 farm.setElement(decoration, farm.x, farm.y);
             } else {
-                // farm.setElement(animal, farm.x, farm.y);
-                farm.setElement(afactory.createAnimal(""))
+                farm.setElement(afactory.createAnimal(currentElementEnum), farm.x, farm.y);
             }
+            farm.setCurrentElementEnum(ElementEnum.EMPTY);
             farm.setAllFalse();
             farm.setX(8);
             farm.setY(12);
@@ -130,6 +131,7 @@ public class KeyHandler implements KeyListener {
 
         // Control animal
         if (code == KeyEvent.VK_A) {
+            farm.setCurrentElementEnum(ElementEnum.COW);
             farm.setAllFalse();
             this.decoration = null;
             this.animal = farm.cowEl;
@@ -137,6 +139,7 @@ public class KeyHandler implements KeyListener {
         }
 
         if (code == KeyEvent.VK_S) {
+            farm.setCurrentElementEnum(ElementEnum.SHEEP);
             farm.setAllFalse();
             this.decoration = null;
             this.animal = farm.sheepEl;
@@ -144,6 +147,7 @@ public class KeyHandler implements KeyListener {
         }
 
         if (code == KeyEvent.VK_D) {
+            farm.setCurrentElementEnum(ElementEnum.DUCK);
             farm.setAllFalse();
             this.decoration = null;
             this.animal = farm.duckEl;
@@ -151,6 +155,7 @@ public class KeyHandler implements KeyListener {
         }
 
         if (code == KeyEvent.VK_F) {
+            farm.setCurrentElementEnum(ElementEnum.CHICKEN);
             farm.setAllFalse();
             this.decoration = null;
             this.animal = farm.chickenEl;
@@ -158,6 +163,7 @@ public class KeyHandler implements KeyListener {
         }
 
         if (code == KeyEvent.VK_G) {
+            farm.setCurrentElementEnum(ElementEnum.HORSE);
             farm.setAllFalse();
             this.decoration = null;
             this.animal = farm.horseEl;

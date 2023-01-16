@@ -17,6 +17,7 @@ public class Farm extends JPanel implements ActionListener {
     private final int width = 25;
 
     Element[][] farm = new Element[height][width];
+    ElementEnum currentElementEnum = ElementEnum.EMPTY;
 
     private final Icon el;
     Decoration barnEl, bushEl, coopEl, haystackEl, lightsEl, pondEl, treeEl;
@@ -299,6 +300,14 @@ public class Farm extends JPanel implements ActionListener {
     public void move(int moveX, int moveY) {
         x += moveX;
         y += moveY;
+    }
+
+    public void setCurrentElementEnum(ElementEnum currentElementEnum) {
+        this.currentElementEnum = currentElementEnum;
+    }
+
+    public ElementEnum getCurrentElementEnum() {
+        return currentElementEnum;
     }
     
 }

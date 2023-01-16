@@ -23,11 +23,12 @@ public class AnimalFarm {
         light = dfactory.createDecoration("light");
         pond = dfactory.createDecoration("pond");
         tree = dfactory.createDecoration("tree");
-        chicken = afactory.createAnimal("chicken");
-        cow = afactory.createAnimal("cow");
-        duck = afactory.createAnimal("duck");
-        horse = afactory.createAnimal("horse");
-        sheep = afactory.createAnimal("sheep");
+
+        chicken = afactory.createAnimal(ElementEnum.CHICKEN);
+        cow = afactory.createAnimal(ElementEnum.COW);
+        duck = afactory.createAnimal(ElementEnum.DUCK);
+        horse = afactory.createAnimal(ElementEnum.HORSE);
+        sheep = afactory.createAnimal(ElementEnum.SHEEP);
         farm = new Farm(barn, bush, coop, haystack, light, pond, tree, chicken, cow, duck, horse, sheep); 
         
         weather = new WeatherFacade(farm, tree, light, bush);

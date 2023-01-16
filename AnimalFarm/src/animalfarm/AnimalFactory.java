@@ -9,19 +9,19 @@ package animalfarm;
  * @author haneyiskdr
  */
 public class AnimalFactory {
-    public Animal createAnimal(String animalType) {
+    public Animal createAnimal(ElementEnum animalType) {
         if (animalType == null) {
             return null;
         }
-        if (animalType.equalsIgnoreCase("CHICKEN")) {
+        if (animalType == ElementEnum.CHICKEN) {
             return new Chicken();
-        } else if (animalType.equalsIgnoreCase("COW")) {
+        } else if (animalType == ElementEnum.COW) {
             return new Cow();
-        } else if (animalType.equalsIgnoreCase("DUCK")) {
+        } else if (animalType == ElementEnum.DUCK) {
             return new Duck();
-        } else if (animalType.equalsIgnoreCase("HORSE")) {
+        } else if (animalType == ElementEnum.HORSE) {
             return new Horse();
-        } else if (animalType.equalsIgnoreCase("SHEEP")) {
+        } else if (animalType == ElementEnum.SHEEP) {
             return new Sheep();
         } 
         return null;
