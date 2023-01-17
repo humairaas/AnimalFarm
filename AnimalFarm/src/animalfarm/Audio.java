@@ -18,22 +18,22 @@ public class Audio {
             rain = new File("res/rain.wav");
             rainStream = AudioSystem.getAudioInputStream(rain);
             rainClip = AudioSystem.getClip();
-            // rainClip.open(rainStream);
+            rainClip.open(rainStream);
 
             wind = new File("res/wind.wav");
             windStream = AudioSystem.getAudioInputStream(wind);
             windClip = AudioSystem.getClip();
-            // windClip.open(windStream);
+            windClip.open(windStream);
 
             night = new File("res/night.wav");
             nightStream = AudioSystem.getAudioInputStream(night);
             nightClip = AudioSystem.getClip();
-            // nightClip.open(nightStream);
+            nightClip.open(nightStream);
 
             sun = new File("res/birds.wav");
             sunStream = AudioSystem.getAudioInputStream(sun);
             sunClip = AudioSystem.getClip();
-            // sunClip.open(sunStream);
+            sunClip.open(sunStream);
 
         } catch (Exception ex) {
             ex.printStackTrace();
