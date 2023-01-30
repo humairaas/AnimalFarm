@@ -60,9 +60,9 @@ public class KeyHandler implements KeyListener {
         // Control decoration
         if (code == KeyEvent.VK_SPACE) {
             if (this.decoration != null) {
-                if (this.decoration.name.equals("fence")) {
+                if (this.decoration.name.equals(ElementEnum.FENCE)) {
                     this.decoration.setImage(farm.getFenceImage());
-                } else if (this.decoration.name.equals("delete")) {
+                } else if (this.decoration.name.equals(ElementEnum.DELETE)) {
                     this.decoration.setImage(new ImageIcon("res/empty.png"));
                 }
             }
