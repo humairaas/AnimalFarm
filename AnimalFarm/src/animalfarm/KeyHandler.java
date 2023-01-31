@@ -59,19 +59,17 @@ public class KeyHandler implements KeyListener {
 
         // Control decoration
         if (code == KeyEvent.VK_SPACE) {
-            if (this.decoration != null) {
-                if (this.decoration.name.equals(ElementEnum.FENCE)) {
-                    this.decoration.setImage(farm.getFenceImage());
-                } else if (this.decoration.name.equals(ElementEnum.DELETE)) {
-                    this.decoration.setImage(new ImageIcon("res/empty.png"));
-                }
-            }
-            if (this.decoration != null) {
+            if (currentElementEnum == ElementEnum.DELETE) {
+                this.decoration.setImage(new ImageIcon("res/empty.png"));
+            } else if (currentElementEnum == ElementEnum.FENCE) {
+                Decoration newFence = dfactory.createDecoration(currentElementEnum, false);
+                newFence.setImage(farm.getFenceImage());
+                farm.setElement(newFence, farm.x, farm.y);
+            } else if (currentElementEnum == ElementEnum.BARN || currentElementEnum == ElementEnum.COOP || currentElementEnum == ElementEnum.HAYSTACK || currentElementEnum == ElementEnum.LIGHT || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.POND || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.BUSH) { 
                 farm.setElement(dfactory.createDecoration(currentElementEnum, false), farm.x, farm.y);
             } else {
                 farm.setElement(afactory.createAnimal(currentElementEnum, false), farm.x, farm.y);
-            }
-            System.out.println("Current currency is " + Farm.getCurrencyInstance());
+            }            
             farm.setCurrentElementEnum(ElementEnum.EMPTY);
             farm.setAllFalse();
             farm.setX(8);
