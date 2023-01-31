@@ -159,6 +159,7 @@ public class Farm extends JPanel implements ActionListener {
         
         //Menu
         el.getMenu().paintIcon(this, g, 21 * size, 0);
+        g.drawString(String.valueOf(Farm.currency), 50,50);
     }
     
     public void draw(Element element, Graphics g, int row, int col){
