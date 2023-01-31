@@ -71,6 +71,7 @@ public class KeyHandler implements KeyListener {
             } else {
                 farm.setElement(afactory.createAnimal(currentElementEnum), farm.x, farm.y);
             }
+            System.out.println("Current currency is " + Farm.getCurrencyInstance());
             farm.setCurrentElementEnum(ElementEnum.EMPTY);
             farm.setAllFalse();
             farm.setX(8);
