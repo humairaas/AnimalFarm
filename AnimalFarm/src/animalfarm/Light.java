@@ -2,6 +2,7 @@ package animalfarm;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.*;
 
 /**
@@ -33,11 +34,11 @@ public class Light extends Decoration implements Subject {
 
     @Override
     public void notifyObservers() {
-        for(Observer observer : observers) {
+        for (Observer observer : observers) {
             observer.update(image);
         }
     }
-    
+
     @Override
     public void setImage(ImageIcon image) {
         this.image = image;
@@ -48,5 +49,5 @@ public class Light extends Decoration implements Subject {
     public String toString() {
         return "Light{" + "observers=" + observers + '}';
     }
-    
+
 }

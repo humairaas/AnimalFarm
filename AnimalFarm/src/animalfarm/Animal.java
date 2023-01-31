@@ -16,10 +16,10 @@ public abstract class Animal implements Element {
     int hunger_level = 30;
     static int total_animal_count = 0;
     int animal_index = 0;
-    int x; 
+    int x;
     int y;
 
-    public Animal() {    
+    public Animal() {
 
     }
 
@@ -35,6 +35,7 @@ public abstract class Animal implements Element {
 
     @Override
     public ImageIcon getImage() {
+        // right over here
         return image;
     }
 

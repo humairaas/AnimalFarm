@@ -8,48 +8,46 @@ import javax.swing.*;
  */
 public class Icon {
 
-    private ImageIcon grass, cloudy, night, rain, dark, barn, menu, cow, sheep, duck, chicken, horse; 
+    private ImageIcon grass, cloudy, night, rain, dark, barn, menu, cow, sheep, duck, chicken, horse;
 
     public Icon() {
-        //Grass
+        // Grass
         grass = new ImageIcon("res/farm.png");
 
-        //Menu
+        // Menu
         menu = new ImageIcon("res/side_menu.png");
 
-        //Night
+        // Night
         night = new ImageIcon("res/night.png");
 
-        //Cloudy
+        // Cloudy
         cloudy = new ImageIcon("res/cloudy.png");
 
-        //Rain
+        // Rain
         rain = new ImageIcon("res/rain.gif");
 
-        //Dark
+        // Dark
         dark = new ImageIcon("res/dark.png");
 
-        //Dark
+        // Dark
         barn = new ImageIcon("res/barn.png");
-        
-        //Cow
-        cow = new ImageIcon("res/cow.png");             
-        
-        //Sheep
-        sheep = new ImageIcon("res/sheep.png");         
-        
-        //duck
-        duck = new ImageIcon("res/duck.png");           
-        
-        //Chicken
-        chicken = new ImageIcon("res/chicken.png");       
-                
-        //horse
-        horse = new ImageIcon("res/horse.png");         
-        
-        
+
+        // Cow
+        cow = new ImageIcon("res/cow.png");
+
+        // Sheep
+        sheep = new ImageIcon("res/sheep.png");
+
+        // duck
+        duck = new ImageIcon("res/duckjjjkk.png");
+
+        // Chicken
+        chicken = new ImageIcon("res/chicken.png");
+
+        // horse
+        horse = new ImageIcon("res/horse.png");
+
     }
-    
 
     public ImageIcon getGrass() {
         return grass;
@@ -78,19 +76,24 @@ public class Icon {
     public ImageIcon getDark() {
         return dark;
     }
+
     public ImageIcon getCow() {
-        return cow;                              
+        return cow;
     }
+
     public ImageIcon getSheep() {
-        return sheep;                               
+        return sheep;
     }
+
     public ImageIcon getDuck() {
-        return duck;                              
+        return duck;
     }
+
     public ImageIcon getChicken() {
-        return chicken;                                 
+        return chicken;
     }
+
     public ImageIcon getHorse() {
-        return horse;                                
+        return horse;
     }
 }
