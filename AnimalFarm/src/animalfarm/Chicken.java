@@ -10,7 +10,7 @@ public class Chicken extends Animal {
 
     public Chicken() {
         name = ElementEnum.CHICKEN;
-        image = new ImageIcon("res/chicken.png");
+        image = new ImageIcon("res/chicken.gif");
         // audio = "moo";
         }
 

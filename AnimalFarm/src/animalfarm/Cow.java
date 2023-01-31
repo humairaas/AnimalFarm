@@ -10,7 +10,7 @@ public class Cow extends Animal {
 
     public Cow() {
         name = ElementEnum.COW;
-        image = new ImageIcon("res/cow.png");
+        image = new ImageIcon("res/cow.gif");
         // audio = "moo";
         }
 

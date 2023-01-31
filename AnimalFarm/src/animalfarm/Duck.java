@@ -10,7 +10,7 @@ public class Duck extends Animal {
 
     public Duck() {
         name = ElementEnum.DUCK;
-        image = new ImageIcon("res/duck.png");
+        image = new ImageIcon("res/duck.gif");
         // audio = "quack quack";
         }
 
