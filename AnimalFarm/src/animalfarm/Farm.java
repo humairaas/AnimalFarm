@@ -175,7 +175,7 @@ public class Farm extends JPanel implements ActionListener {
         el.getMenu().paintIcon(this, g, 19 * size + 100, 25);
         g.setFont(derivedFont); 
         g.setColor(Color.WHITE);
-        g.drawString("$" + String.valueOf(Farm.currency), 910,30);
+        g.drawString("$" + String.valueOf(Farm.currency), 940,30);
     }
 
     public void draw(Element element, Graphics g, int row, int col){

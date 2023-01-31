@@ -67,9 +67,9 @@ public class KeyHandler implements KeyListener {
                 }
             }
             if (this.decoration != null) {
-                farm.setElement(dfactory.createDecoration(currentElementEnum), farm.x, farm.y);
+                farm.setElement(dfactory.createDecoration(currentElementEnum, false), farm.x, farm.y);
             } else {
-                farm.setElement(afactory.createAnimal(currentElementEnum), farm.x, farm.y);
+                farm.setElement(afactory.createAnimal(currentElementEnum, false), farm.x, farm.y);
             }
             System.out.println("Current currency is " + Farm.getCurrencyInstance());
             farm.setCurrentElementEnum(ElementEnum.EMPTY);
@@ -134,7 +134,7 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_9) {
             farm.setAllFalse();
-            this.decoration = dfactory.createDecoration(ElementEnum.DELETE);
+            this.decoration = dfactory.createDecoration(ElementEnum.DELETE, false);
             farm.setIsDelete(true);
         }
 

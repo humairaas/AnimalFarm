@@ -10,35 +10,59 @@ package animalfarm;
  */
 public class DecorationFactory {
 
-    public Decoration createDecoration(ElementEnum decorationType) {
+    public Decoration createDecoration(ElementEnum decorationType, boolean isStart) {
         if (decorationType == null) {
             return null;
         }
         if (decorationType == ElementEnum.BARN) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 50);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 50) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 50);
+            }
             return new Barn();
         } else if (decorationType == ElementEnum.BUSH) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 5);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 5) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 5);
+            }
             return new Bush();
         } else if (decorationType == ElementEnum.COOP) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 10);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 10) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 10);
+            }
             return new Coop();
         } else if (decorationType == ElementEnum.DELETE) {
             return new Delete();
         } else if (decorationType == ElementEnum.FENCE) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 2);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 2) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 2);
+            }
             return new Fence();
         } else if (decorationType == ElementEnum.HAYSTACK) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 2);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 2) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 2);
+            }
             return new Haystack();
         } else if (decorationType == ElementEnum.LIGHT) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 25);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 25) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 25);
+            }
             return new Light();
         } else if (decorationType == ElementEnum.POND) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 50);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 40) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 40);
+            }
             return new Pond();
         } else if (decorationType == ElementEnum.TREE) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - 25);
+            if (!isStart) {
+                if (Farm.getCurrencyInstance() < 20) return null;
+                Farm.setCurrency(Farm.getCurrencyInstance() - 20);
+            }
             return new Tree();
         }
         return null;
