@@ -33,5 +33,4 @@ public abstract class Decoration implements Element {
     public void setImage(ImageIcon image) {
         this.image = image;
     }
-    
 }

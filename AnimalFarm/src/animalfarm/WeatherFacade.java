@@ -25,7 +25,7 @@ public class WeatherFacade {
         farm.setIsRainy(false);
         farm.setIsWindy(false);
         farm.setIsNight(false);
-
+        
         tree.setImage(new ImageIcon("res/tree.png"));
         bush.setImage(new ImageIcon("res/bush.png"));
         light.setImage(new ImageIcon("res/lamp_sun.png"));
@@ -41,7 +41,7 @@ public class WeatherFacade {
         farm.setIsRainy(false);
         farm.setIsWindy(false);
         farm.setIsNight(false);
-
+       
         tree.setImage(new ImageIcon("res/tree.png"));
         bush.setImage(new ImageIcon("res/bush.png"));
         light.setImage(new ImageIcon("res/lamp_sun.png"));
