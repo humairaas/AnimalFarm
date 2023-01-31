@@ -60,17 +60,18 @@ public class KeyHandler implements KeyListener {
         // Control decoration
         if (code == KeyEvent.VK_SPACE) {
             if (this.decoration != null) {
-                if (this.decoration.name.equals("fence")) {
+                if (this.decoration.name.equals(ElementEnum.FENCE)) {
                     this.decoration.setImage(farm.getFenceImage());
-                } else if (this.decoration.name.equals("delete")) {
+                } else if (this.decoration.name.equals(ElementEnum.DELETE)) {
                     this.decoration.setImage(new ImageIcon("res/empty.png"));
                 }
             }
             if (this.decoration != null) {
-                farm.setElement(decoration, farm.x, farm.y);
+                farm.setElement(dfactory.createDecoration(currentElementEnum, false), farm.x, farm.y);
             } else {
-                farm.setElement(afactory.createAnimal(currentElementEnum), farm.x, farm.y);
+                farm.setElement(afactory.createAnimal(currentElementEnum, false), farm.x, farm.y);
             }
+            System.out.println("Current currency is " + Farm.getCurrencyInstance());
             farm.setCurrentElementEnum(ElementEnum.EMPTY);
             farm.setAllFalse();
             farm.setX(8);
@@ -78,54 +79,62 @@ public class KeyHandler implements KeyListener {
             farm.setCounter(0);
         }
         if (code == KeyEvent.VK_1) {
+            farm.setCurrentElementEnum(ElementEnum.BARN);
             farm.setAllFalse();
             this.decoration = farm.barnEl;
             farm.setIsBarn(true);
         }
         if (code == KeyEvent.VK_2) {
+            farm.setCurrentElementEnum(ElementEnum.COOP);
             farm.setAllFalse();
             this.decoration = farm.coopEl;
             farm.setIsCoop(true);
         }
         if (code == KeyEvent.VK_3) {
+            farm.setCurrentElementEnum(ElementEnum.FENCE);
             farm.setAllFalse();
             if (farm.getCounter() == 8) {
                 farm.setCounter(0);
             }
             int counter = farm.getCounter();
             counter++;
+            this.decoration = farm.fenceEl;
             farm.setCounter(counter);
-            this.decoration = dfactory.createDecoration(ElementEnum.FENCE);
             farm.setIsFence(true);
         }
         if (code == KeyEvent.VK_4) {
+            farm.setCurrentElementEnum(ElementEnum.HAYSTACK);
             farm.setAllFalse();
             this.decoration = farm.haystackEl;
             farm.setIsHaystack(true);
         }
         if (code == KeyEvent.VK_5) {
+            farm.setCurrentElementEnum(ElementEnum.LIGHT);
             farm.setAllFalse();
             this.decoration = farm.lightsEl;
             farm.setIsLights(true);
         }
         if (code == KeyEvent.VK_6) {
+            farm.setCurrentElementEnum(ElementEnum.POND);
             farm.setAllFalse();
             this.decoration = farm.pondEl;
             farm.setIsPond(true);
         }
         if (code == KeyEvent.VK_7) {
+            farm.setCurrentElementEnum(ElementEnum.BUSH);
             farm.setAllFalse();
             this.decoration = farm.bushEl;
             farm.setIsBush(true);
         }
         if (code == KeyEvent.VK_8) {
+            farm.setCurrentElementEnum(ElementEnum.TREE);
             farm.setAllFalse();
             this.decoration = farm.treeEl;
             farm.setIsTree(true);
         }
         if (code == KeyEvent.VK_9) {
             farm.setAllFalse();
-            this.decoration = dfactory.createDecoration(ElementEnum.DELETE);
+            this.decoration = dfactory.createDecoration(ElementEnum.DELETE, false);
             farm.setIsDelete(true);
         }
 

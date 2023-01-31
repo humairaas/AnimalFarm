@@ -2,6 +2,9 @@ package animalfarm;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.swing.*;
 
 /**
@@ -44,7 +47,11 @@ public class Farm extends JPanel implements ActionListener {
     private boolean isSheep = false;         
     private boolean isDuck = false;         
     private boolean isChicken = false;         
-    private boolean isHorse = false;         
+    private boolean isHorse = false;   
+    
+    private static int currency = 0;
+    private static int foodCount = 0;
+    private Font derivedFont;
 
     public Farm(Decoration barnEl, Decoration bushEl, Decoration coopEl, Decoration haystackEl, Decoration lightsEl, Decoration pondEl, Decoration treeEl, Animal chickenEl, Animal cowEl, Animal duckEl, Animal horseEl, Animal sheepEl) {
         el = new Icon();
@@ -62,6 +69,18 @@ public class Farm extends JPanel implements ActionListener {
         this.duckEl = duckEl;                          
         this.horseEl = horseEl;
         this.sheepEl = sheepEl;  
+        currency = 100;
+        foodCount = 100;
+
+        InputStream is = getClass().getResourceAsStream("Minecraft.ttf");
+        try {
+            Font font = Font.createFont(Font.TRUETYPE_FONT, is);
+            derivedFont = font.deriveFont(Font.PLAIN, 24);
+        } catch (FontFormatException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -153,9 +172,12 @@ public class Farm extends JPanel implements ActionListener {
         }
         
         //Menu
-        el.getMenu().paintIcon(this, g, 21 * size, 0);
+        el.getMenu().paintIcon(this, g, 19 * size + 100, 25);
+        g.setFont(derivedFont); 
+        g.setColor(Color.WHITE);
+        g.drawString("$" + String.valueOf(Farm.currency), 940,30);
     }
-    
+
     public void draw(Element element, Graphics g, int row, int col){
         element.getImage().paintIcon(this, g, col * size , row * size - (element.getImage().getIconHeight() - size));
     }
@@ -309,5 +331,21 @@ public class Farm extends JPanel implements ActionListener {
     public ElementEnum getCurrentElementEnum() {
         return currentElementEnum;
     }
-    
+
+    public static int getCurrencyInstance() {
+        return currency;
+    }
+
+    public static void setCurrency(int currency) {
+        Farm.currency = currency;
+    }
+
+    public static int getFoodCountInstance() {
+        return foodCount;
+    }
+
+    public static void setFoodCount(int foodCount) {
+        Farm.foodCount = foodCount;
+    }
+
 }
