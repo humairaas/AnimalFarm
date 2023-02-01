@@ -14,6 +14,8 @@ public class Chicken extends Animal {
         audio = "res/chicken.wav";
         cost = 2;
         sellPrice = 3;
+        initialHungerLevel = 2;
+        harvestingAgeInMinutes = 1;
     }
 
     public ImageIcon getChicken() {

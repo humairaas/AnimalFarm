@@ -14,6 +14,8 @@ public class Cow extends Animal {
         audio = "res/cow-mooing.wav";
         cost = 20;
         sellPrice = 30;
+        initialHungerLevel = 5;
+        harvestingAgeInMinutes = 6;
     }
 
     public ImageIcon getCow() {

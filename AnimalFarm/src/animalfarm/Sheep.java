@@ -14,6 +14,8 @@ public class Sheep extends Animal {
         audio = "res/sheep.wav";
         cost = 10;
         sellPrice = 15;
+        initialHungerLevel = 3;
+        harvestingAgeInMinutes = 4;
     }
 
     public ImageIcon getSheep() {

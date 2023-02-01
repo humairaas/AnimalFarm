@@ -14,17 +14,20 @@ public abstract class Animal implements Element {
     ImageIcon image;
     String audio;
     Timer timer;
-    int initialHungerLevel = 10;
-    int currentHungerLevel = initialHungerLevel;
+
     static int total_animal_count = 0;
     int animal_index = 0;
-    int x;
-    int y;
+
+    // Animal-specific parameters to be defined in the subclasses
     int cost;
     int sellPrice;
-    int currentAgeInMinutes = 0;
-    int harvestingAgeInMinutes = 1;
-    int interval_in_seconds = 60;
+    int initialHungerLevel;
+    int harvestingAgeInMinutes;
+    
+    int currentHungerLevel;
+    int currentAgeInMinutes;
+    int x;
+    int y;
     boolean hasNotifiedReadyToHarvest = false;
     
     public Animal() {
@@ -95,9 +98,13 @@ public abstract class Animal implements Element {
         this.x = x;
         this.y = y;
 
+        currentHungerLevel = initialHungerLevel;
+        currentAgeInMinutes = 0;
+
         animal_index = total_animal_count;
         total_animal_count++;
-        timer = new Timer(interval_in_seconds * 1000 / 4, new ActionListener() {
+        int intervalInSeconds = 60;
+        timer = new Timer(intervalInSeconds * 1000, new ActionListener() {
             // Lapses every 60 seconds or 1 minute
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -106,6 +113,7 @@ public abstract class Animal implements Element {
                 System.out.println("Animal " + name + " of index " + animal_index + " hunger level: " + currentHungerLevel);
                 if (currentHungerLevel <= 0) {
                     System.out.println("Animal " + name + " of index " + animal_index + " died of hunger");
+                    stopTimer();
                     delete();
                 }
                 System.out.println("Animal " + name + " of index " + animal_index + " is now aged " + currentAgeInMinutes + " years");
