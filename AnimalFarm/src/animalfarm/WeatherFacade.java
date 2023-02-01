@@ -12,12 +12,12 @@ public class WeatherFacade {
     Decoration tree, light, bush;
     Audio audio;
 
-    public WeatherFacade(Farm farm, Decoration tree, Decoration light, Decoration bush) {
+    public WeatherFacade(Farm farm, Decoration tree, Decoration light, Decoration bush, Audio audio) {
         this.farm = farm;
         this.tree = tree;
         this.light = light;
         this.bush = bush;
-        audio = new Audio();
+        this.audio = audio;
     }
 
     public void Sunny() {

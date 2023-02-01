@@ -13,13 +13,15 @@ public class AnimalFarm {
     Tree treeSubject;
     Bush bushSubject;
     Light lightSubject;
-    Animal chicken, cow, duck, horse, sheep;                  
+    Animal chicken, cow, duck, horse, sheep;    
+    Audio audio;
     WeatherFacade weather;
 
     public AnimalFarm() {
         treeSubject = new Tree();
         bushSubject = new Bush();
         lightSubject = new Light();
+        audio = new Audio();
         
         afactory = new AnimalFactory();
         dfactory = new DecorationFactory(treeSubject, bushSubject, lightSubject);
@@ -40,7 +42,7 @@ public class AnimalFarm {
         sheep = afactory.createAnimal(ElementEnum.SHEEP);
         farm = new Farm(barn, bush, coop, haystack, light, pond, tree, chicken, cow, duck, horse, sheep); 
         
-        weather = new WeatherFacade(farm, treeSubject, lightSubject, bushSubject);
+        weather = new WeatherFacade(farm, treeSubject, lightSubject, bushSubject, audio);
     }
 
     public void start() {
