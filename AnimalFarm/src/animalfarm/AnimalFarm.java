@@ -24,20 +24,20 @@ public class AnimalFarm {
         afactory = new AnimalFactory();
         dfactory = new DecorationFactory(treeSubject, bushSubject, lightSubject);
         
-        tree = dfactory.createDecoration(ElementEnum.TREE, true);
-        bush = dfactory.createDecoration(ElementEnum.BUSH, true);
-        light = dfactory.createDecoration(ElementEnum.LIGHT, true);
+        tree = dfactory.createDecoration(ElementEnum.TREE);
+        bush = dfactory.createDecoration(ElementEnum.BUSH);
+        light = dfactory.createDecoration(ElementEnum.LIGHT);
         
-        barn = dfactory.createDecoration(ElementEnum.BARN, true);
-        coop = dfactory.createDecoration(ElementEnum.COOP, true);
-        haystack = dfactory.createDecoration(ElementEnum.HAYSTACK, true);
-        pond = dfactory.createDecoration(ElementEnum.POND, true);
+        barn = dfactory.createDecoration(ElementEnum.BARN);
+        coop = dfactory.createDecoration(ElementEnum.COOP);
+        haystack = dfactory.createDecoration(ElementEnum.HAYSTACK);
+        pond = dfactory.createDecoration(ElementEnum.POND);
 
-        chicken = afactory.createAnimal(ElementEnum.CHICKEN, true);
-        cow = afactory.createAnimal(ElementEnum.COW, true);
-        duck = afactory.createAnimal(ElementEnum.DUCK, true);
-        horse = afactory.createAnimal(ElementEnum.HORSE, true);
-        sheep = afactory.createAnimal(ElementEnum.SHEEP, true);
+        chicken = afactory.createAnimal(ElementEnum.CHICKEN);
+        cow = afactory.createAnimal(ElementEnum.COW);
+        duck = afactory.createAnimal(ElementEnum.DUCK);
+        horse = afactory.createAnimal(ElementEnum.HORSE);
+        sheep = afactory.createAnimal(ElementEnum.SHEEP);
         farm = new Farm(barn, bush, coop, haystack, light, pond, tree, chicken, cow, duck, horse, sheep); 
         
         weather = new WeatherFacade(farm, treeSubject, lightSubject, bushSubject);

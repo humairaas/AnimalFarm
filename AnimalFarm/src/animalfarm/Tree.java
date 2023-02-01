@@ -14,6 +14,7 @@ public class Tree extends Decoration implements Subject {
     public Tree() {
         name = ElementEnum.TREE;
         image = new ImageIcon("res/tree.png");
+        cost = 20;
         observers = new ArrayList<Observer>();
     }
 

@@ -12,6 +12,7 @@ public class Duck extends Animal {
         name = ElementEnum.DUCK;
         image = new ImageIcon("res/duck.gif");
         audio = "res/duck-quacking.wav";
+        cost = 5;
     }
 
     public ImageIcon getDuck() {

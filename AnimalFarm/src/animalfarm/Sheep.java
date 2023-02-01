@@ -12,6 +12,7 @@ public class Sheep extends Animal {
         name = ElementEnum.SHEEP;
         image = new ImageIcon("res/sheep.gif");
         audio = "res/sheep.wav";
+        cost = 10;
     }
 
     public ImageIcon getSheep() {

@@ -15,6 +15,7 @@ public class Light extends Decoration implements Subject {
     public Light() {
         name = ElementEnum.LIGHT;
         image = new ImageIcon("res/lamp_sun.png");
+        cost = 25;
         observers = new ArrayList<Observer>();
     }
 

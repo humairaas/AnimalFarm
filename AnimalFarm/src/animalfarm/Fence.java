@@ -12,6 +12,7 @@ public class Fence extends Decoration {
 
     public Fence() {
         name = ElementEnum.FENCE;
+        cost = 2;
     }
 
     public ImageIcon getFence(int counter) {

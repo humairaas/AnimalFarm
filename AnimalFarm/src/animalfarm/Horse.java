@@ -12,6 +12,7 @@ public class Horse extends Animal {
         name = ElementEnum.HORSE;
         image = new ImageIcon("res/horse.gif");
         audio = "res/horse.wav";
+        cost = 40;
     }
 
     public ImageIcon getHorse() {

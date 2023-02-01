@@ -18,9 +18,17 @@ public abstract class Animal implements Element {
     int animal_index = 0;
     int x;
     int y;
+    int cost;
 
     public Animal() {
+    }
 
+    public void buy() {
+        if (Farm.getCurrencyInstance() >= cost) {
+            Farm.setCurrency(Farm.getCurrencyInstance() - cost);
+        } else {
+            System.out.println("Not enough money to buy this animal");
+        }
     }
 
     @Override

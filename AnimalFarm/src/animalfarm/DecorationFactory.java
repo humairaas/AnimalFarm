@@ -20,61 +20,28 @@ public class DecorationFactory {
         this.light = light;
     }
 
-    public Decoration createDecoration(ElementEnum decorationType, boolean isStart) {
+    public Decoration createDecoration(ElementEnum decorationType) {
         if (decorationType == null) {
             return null;
         }
         if (decorationType == ElementEnum.BARN) {
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 50) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 50);
-            }
             return new Barn();
         } else if (decorationType == ElementEnum.BUSH) {
             // add as observer
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 5) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 5);
-            }
             return new BushChild(bush);
         } else if (decorationType == ElementEnum.COOP) {
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 10) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 10);
-            }
             return new Coop();
         } else if (decorationType == ElementEnum.DELETE) {
             return new Delete();
         } else if (decorationType == ElementEnum.FENCE) {
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 2) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 2);
-            }
             return new Fence();
         } else if (decorationType == ElementEnum.HAYSTACK) {
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 2) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 2);
-            }
             return new Haystack();
         } else if (decorationType == ElementEnum.LIGHT) {
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 25) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 25);
-            }
             return new LightChild(light);
         } else if (decorationType == ElementEnum.POND) {
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 40) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 40);
-            }
             return new Pond();
         } else if (decorationType == ElementEnum.TREE) {
-            
-            if (!isStart) {
-                if (Farm.getCurrencyInstance() < 20) return null;
-                Farm.setCurrency(Farm.getCurrencyInstance() - 20);
-            }
             return new TreeChild(tree);
         }
         return null;

@@ -14,6 +14,7 @@ public class Bush extends Decoration implements Subject {
     public Bush() {
         name = ElementEnum.BUSH;
         image = new ImageIcon("res/bush.png");
+        cost = 5;
         observers = new ArrayList<Observer>();
     }
 

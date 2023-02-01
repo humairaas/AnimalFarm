@@ -67,15 +67,27 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_SPACE) {
             if (currentElementEnum == ElementEnum.DELETE) {
                 Element element = farm.getElement(farm.x, farm.y);
-                if (element != null) farm.deleteElement(farm.x, farm.y);
+                if (element != null) {
+                    if (element instanceof Animal) {
+                        Animal animal = (Animal) element;
+                        
+                    }
+                    farm.deleteElement(farm.x, farm.y);
+                } 
+                    
             } else if (currentElementEnum == ElementEnum.FENCE) {
-                Decoration newFence = dfactory.createDecoration(currentElementEnum, false);
+                Decoration newFence = dfactory.createDecoration(currentElementEnum);
                 newFence.setImage(farm.getFenceImage());
+                newFence.buy();
                 farm.setElement(newFence, farm.x, farm.y);
             } else if (currentElementEnum == ElementEnum.BARN || currentElementEnum == ElementEnum.COOP || currentElementEnum == ElementEnum.HAYSTACK || currentElementEnum == ElementEnum.LIGHT || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.POND || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.BUSH) { 
-                farm.setElement(dfactory.createDecoration(currentElementEnum, false), farm.x, farm.y);
+                Decoration decoration = dfactory.createDecoration(currentElementEnum);
+                decoration.buy();
+                farm.setElement(decoration, farm.x, farm.y);
             } else {
-                farm.setElement(afactory.createAnimal(currentElementEnum, false), farm.x, farm.y);
+                Animal animal = afactory.createAnimal(currentElementEnum);
+                animal.buy();
+                farm.setElement(animal, farm.x, farm.y);
             }            
             farm.setCurrentElementEnum(ElementEnum.EMPTY);
             farm.setAllFalse();
@@ -140,7 +152,7 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_9) {
             farm.setCurrentElementEnum(ElementEnum.DELETE);
             farm.setAllFalse();
-            this.decoration = dfactory.createDecoration(ElementEnum.DELETE, false);
+            this.decoration = dfactory.createDecoration(ElementEnum.DELETE);
             farm.setIsDelete(true);
         }
         

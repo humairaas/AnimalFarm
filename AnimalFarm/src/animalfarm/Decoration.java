@@ -10,8 +10,17 @@ public abstract class Decoration implements Element {
 
     ElementEnum name;
     ImageIcon image;
+    int cost;
 
     public Decoration() {
+    }
+
+    public void buy() {
+        if (Farm.getCurrencyInstance() >= cost) {
+            Farm.setCurrency(Farm.getCurrencyInstance() - cost);
+        } else {
+            System.out.println("Not enough money to buy this decoration");
+        }
     }
 
     @Override
