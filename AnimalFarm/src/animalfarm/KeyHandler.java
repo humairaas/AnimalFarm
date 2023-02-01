@@ -16,14 +16,20 @@ public class KeyHandler implements KeyListener {
     ImageIcon image;
     Animal animal;
     Farm farm;
+    LightsControl remote;
+    LightOnCommand lightOn;
+    LightOffCommand lightOff;
 
     int speedX, speedY;
 
-    public KeyHandler(AnimalFactory afactory, DecorationFactory dfactory, Farm farm, WeatherFacade weather) {
+    public KeyHandler(AnimalFactory afactory, DecorationFactory dfactory, Farm farm, WeatherFacade weather, Decoration light) {
         this.farm = farm;
         this.weather = weather;
         this.afactory = afactory;
         this.dfactory = dfactory;
+        remote = new LightsControl();
+        lightOn = new LightOnCommand(light);
+        lightOff = new LightOffCommand(light);
     }
 
     @Override
@@ -137,6 +143,19 @@ public class KeyHandler implements KeyListener {
             this.decoration = dfactory.createDecoration(ElementEnum.DELETE, false);
             farm.setIsDelete(true);
         }
+        
+        // Control light
+        if (code == KeyEvent.VK_O) {
+            remote.setCommand(lightOn);
+            remote.buttonWasPressed();
+            System.out.println("Turn on the lights");
+        }
+        if (code == KeyEvent.VK_P) {
+            remote.setCommand(lightOff);
+            remote.buttonWasPressed();
+            System.out.println("Turn off the lights");
+        }
+
 
         // Control animal
         if (code == KeyEvent.VK_A) {

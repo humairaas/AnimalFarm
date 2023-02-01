@@ -47,7 +47,7 @@ public class AnimalFarm {
         AWTWindow window = new AWTWindow();
         window.init("Animal Farm");
         window.add(farm);
-        window.addKeyListener(new KeyHandler(afactory, dfactory, farm, weather));
+        window.addKeyListener(new KeyHandler(afactory, dfactory, farm, weather, lightSubject));
         window.setFocusable(true);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
