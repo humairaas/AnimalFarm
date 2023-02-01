@@ -37,7 +37,7 @@ public abstract class Animal implements Element {
     }
 
     public boolean canBeBought() {
-        return currencySingleton.getCurrencyInstance() >= cost;
+        return currencySingleton.getCurrency() >= cost;
     }
 
     public boolean canBeSold() {
@@ -46,14 +46,14 @@ public abstract class Animal implements Element {
 
     public void buy() {
         if (canBeBought()) {
-            currencySingleton.setCurrency(currencySingleton.getCurrencyInstance() - cost);
+            currencySingleton.setCurrency(currencySingleton.getCurrency() - cost);
         } else {
             System.out.println("Not enough money to buy this animal");
         }
     }
 
     public void sell() {
-        currencySingleton.setCurrency(currencySingleton.getCurrencyInstance() + sellPrice);
+        currencySingleton.setCurrency(currencySingleton.getCurrency() + sellPrice);
     }
 
     @Override

@@ -19,7 +19,7 @@ public class CurrencySingleton {
         return instance;
     }
     
-    public int getCurrencyInstance() {
+    public int getCurrency() {
         return currency;
     }
     
