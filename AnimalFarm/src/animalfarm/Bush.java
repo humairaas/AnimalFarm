@@ -18,10 +18,6 @@ public class Bush extends Decoration implements Subject {
         observers = new ArrayList<Observer>();
     }
 
-    public ImageIcon getBush() {
-        return image;
-    }
-
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);

@@ -14,8 +14,4 @@ public class Duck extends Animal {
         audio = "res/duck-quacking.wav";
         cost = 5;
     }
-
-    public ImageIcon getDuck() {
-        return image;
-    }
 }

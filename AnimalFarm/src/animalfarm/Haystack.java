@@ -13,9 +13,4 @@ public class Haystack extends Decoration {
         image = new ImageIcon("res/haystack.png");
         cost = 2;
     }
-
-    public ImageIcon getHaystack() {
-        return image;
-    }
-
 }

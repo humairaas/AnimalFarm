@@ -13,9 +13,5 @@ public class Barn extends Decoration {
         image = new ImageIcon("res/barn.png");
         cost = 50;
     }
-
-    public ImageIcon getBarn() {
-        return image;
-    }
     
 }

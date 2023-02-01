@@ -14,8 +14,4 @@ public class Horse extends Animal {
         audio = "res/horse.wav";
         cost = 40;
     }
-
-    public ImageIcon getHorse() {
-        return image;
-    }
 }

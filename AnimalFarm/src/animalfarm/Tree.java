@@ -18,10 +18,6 @@ public class Tree extends Decoration implements Subject {
         observers = new ArrayList<Observer>();
     }
 
-    public ImageIcon getTree() {
-        return image;
-    }
-
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);

@@ -19,10 +19,6 @@ public class Light extends Decoration implements Subject {
         observers = new ArrayList<Observer>();
     }
 
-    public ImageIcon getLights() {
-        return image;
-    }
-
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);

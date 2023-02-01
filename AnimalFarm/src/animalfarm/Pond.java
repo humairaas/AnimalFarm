@@ -12,10 +12,5 @@ public class Pond extends Decoration {
         name = ElementEnum.POND;
         image = new ImageIcon("res/pond.png");
         cost = 40;
-    }
-
-    public ImageIcon getPond() {
-        return image;
-    }
-    
+    }  
 }

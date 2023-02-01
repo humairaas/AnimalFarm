@@ -8,7 +8,7 @@ import javax.swing.*;
  */
 public class Icon {
 
-    private ImageIcon grass, cloudy, night, rain, dark, barn, menu, cow, sheep, duck, chicken, horse;
+    private ImageIcon grass, cloudy, night, rain, dark, barn, menu;
 
     public Icon() {
         // Grass
@@ -28,25 +28,6 @@ public class Icon {
 
         // Dark
         dark = new ImageIcon("res/dark.png");
-
-        // Dark
-        barn = new ImageIcon("res/barn.png");
-
-        // Cow
-        cow = new ImageIcon("res/cow.png");
-
-        // Sheep
-        sheep = new ImageIcon("res/sheep.png");
-
-        // duck
-        duck = new ImageIcon("res/duckjjjkk.png");
-
-        // Chicken
-        chicken = new ImageIcon("res/chicken.png");
-
-        // horse
-        horse = new ImageIcon("res/horse.png");
-
     }
 
     public ImageIcon getGrass() {
@@ -75,25 +56,5 @@ public class Icon {
 
     public ImageIcon getDark() {
         return dark;
-    }
-
-    public ImageIcon getCow() {
-        return cow;
-    }
-
-    public ImageIcon getSheep() {
-        return sheep;
-    }
-
-    public ImageIcon getDuck() {
-        return duck;
-    }
-
-    public ImageIcon getChicken() {
-        return chicken;
-    }
-
-    public ImageIcon getHorse() {
-        return horse;
     }
 }
