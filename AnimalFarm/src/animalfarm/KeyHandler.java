@@ -103,11 +103,11 @@ public class KeyHandler implements KeyListener {
                         }
                     }            
                 }
+                farm.setCurrentElementEnum(ElementEnum.EMPTY);
+                farm.setAllFalse();
             }
-            farm.setCurrentElementEnum(ElementEnum.EMPTY);
-            farm.setAllFalse();
-            farm.setX(8);
-            farm.setY(12);
+            farm.setX(farm.x);
+            farm.setY(farm.y);
             farm.setCounter(0);
         }
         if (code == KeyEvent.VK_1) {
