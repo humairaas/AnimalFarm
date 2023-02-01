@@ -9,7 +9,7 @@ public class AnimalFarm {
     static Farm farm;
     static AnimalFactory afactory;
     static DecorationFactory dfactory;
-    Decoration barn, bush, coop, delete, fence, haystack, light, pond, tree; 
+    Decoration barn, bush, coop, delete, feed, fence, haystack, light, pond, tree; 
     Tree treeSubject;
     Bush bushSubject;
     Light lightSubject;

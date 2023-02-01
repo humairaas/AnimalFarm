@@ -26,6 +26,7 @@ public class Farm extends JPanel implements ActionListener {
     Decoration barnEl, bushEl, coopEl, haystackEl, lightsEl, pondEl, treeEl;
     Animal chickenEl, cowEl, duckEl, horseEl, sheepEl;
     Delete deleteEl;
+    Feed feedEl;
     Fence fenceEl;                
     private ImageIcon fenceImage;
     private final int size = 40;
@@ -43,6 +44,7 @@ public class Farm extends JPanel implements ActionListener {
     private boolean isBush = false;
     private boolean isTree = false;
     private boolean isDelete = false;
+    private boolean isFeed = false;
     private boolean isCow = false;         
     private boolean isSheep = false;         
     private boolean isDuck = false;         
@@ -58,6 +60,7 @@ public class Farm extends JPanel implements ActionListener {
         this.bushEl = bushEl;
         this.coopEl = coopEl;
         this.deleteEl = new Delete();
+        this.feedEl = new Feed();
         this.fenceEl = new Fence();
         this.haystackEl = haystackEl;
         this.lightsEl = lightsEl;
@@ -151,6 +154,9 @@ public class Farm extends JPanel implements ActionListener {
         if (isDelete) {
             deleteEl.getDelete().paintIcon(this, g, y * size, x * size);
         }
+        if (isFeed) {
+            feedEl.getFeed().paintIcon(this, g, y * size, x * size);
+        }
         
         // Animals
         if (isCow) {
@@ -232,6 +238,10 @@ public class Farm extends JPanel implements ActionListener {
         this.isDelete = isDelete;
     }
 
+    public void setIsFeed(boolean isFeed) {
+        this.isFeed = isFeed;
+    }
+
     public void setIsCow(boolean isCow) {
         this.isCow = isCow;                                                            
     }
@@ -262,6 +272,7 @@ public class Farm extends JPanel implements ActionListener {
         this.isBush = false;
         this.isTree = false;
         this.isDelete = false;
+        this.isFeed = false;
         this.isCow = false;        
         this.isSheep = false;
         this.isDuck = false;
@@ -291,9 +302,7 @@ public class Farm extends JPanel implements ActionListener {
 
     public void setElement(Animal animal, int x, int y) {
         this.farm[x][y] = animal;
-        animal.startTimer();
-        animal.setX(x);
-        animal.setY(y);
+        animal.add(x, y);
     }
 
     public void setElement(Food food, int x, int y) {
