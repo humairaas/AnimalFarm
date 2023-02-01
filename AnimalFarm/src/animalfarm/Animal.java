@@ -120,6 +120,8 @@ public abstract class Animal implements Element {
         currentHungerLevel = initialHungerLevel;
         currentAgeInMinutes = 0;
 
+        playAudio();
+
         animal_index = total_animal_count;
         total_animal_count++;
         int intervalInSeconds = 60;
