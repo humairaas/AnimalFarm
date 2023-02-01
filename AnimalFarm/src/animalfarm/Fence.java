@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Fence extends Decoration {
 
     int counter;
@@ -45,5 +41,4 @@ public class Fence extends Decoration {
         }
         return image;
     }
-    
 }

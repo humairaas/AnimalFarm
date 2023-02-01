@@ -5,10 +5,6 @@ import java.io.*;
 import javax.sound.sampled.*;
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public abstract class Animal implements Element {
 
     ElementEnum name;
@@ -146,8 +142,6 @@ public abstract class Animal implements Element {
                 }
             }
         });
-
         timer.start();
     }
-
 }

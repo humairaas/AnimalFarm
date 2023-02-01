@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Cow extends Animal {
 
     public Cow() {

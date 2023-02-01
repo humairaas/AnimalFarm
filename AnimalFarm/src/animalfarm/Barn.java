@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author haneyiskdr
- */
 public class Barn extends Decoration {
 
     public Barn() {
@@ -13,5 +9,4 @@ public class Barn extends Decoration {
         image = new ImageIcon("res/barn.png");
         cost = 50;
     }
-    
 }

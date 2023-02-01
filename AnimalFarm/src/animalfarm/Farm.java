@@ -7,10 +7,6 @@ import java.io.InputStream;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Farm extends JPanel implements ActionListener {
 
     int x = 8;
@@ -54,7 +50,9 @@ public class Farm extends JPanel implements ActionListener {
     private Font derivedFont;
     private CurrencySingleton currencySingleton;
 
-    public Farm(Decoration barnEl, Decoration bushEl, Decoration coopEl, Decoration haystackEl, Decoration lightsEl, Decoration pondEl, Decoration treeEl, Animal chickenEl, Animal cowEl, Animal duckEl, Animal horseEl, Animal sheepEl) {
+    public Farm(Decoration barnEl, Decoration bushEl, Decoration coopEl, Decoration haystackEl, 
+                Decoration lightsEl, Decoration pondEl, Decoration treeEl, Animal chickenEl, Animal cowEl, 
+                Animal duckEl, Animal horseEl, Animal sheepEl) {
         el = new Icon();
         this.barnEl = barnEl;
         this.bushEl = bushEl;
@@ -179,11 +177,12 @@ public class Farm extends JPanel implements ActionListener {
         el.getMenu().paintIcon(this, g, 21 * size, 25);
         g.setFont(derivedFont); 
         g.setColor(Color.WHITE);
-        g.drawString("$" + String.valueOf(currencySingleton.getCurrency()), 940,30);
+        g.drawString("$" + String.valueOf(currencySingleton.getCurrency()), 900,30);
     }
 
     public void draw(Element element, Graphics g, int row, int col){
-        element.getImage().paintIcon(this, g, col * size , row * size - (element.getImage().getIconHeight() - size));
+        element.getImage().paintIcon(this, g, col * size , row * size 
+                - (element.getImage().getIconHeight() - size));
     }
 
     public void setIsRainy(boolean isRainy) {
@@ -305,10 +304,6 @@ public class Farm extends JPanel implements ActionListener {
         animal.add(x, y);
     }
 
-    public void setElement(Food food, int x, int y) {
-        this.farm[x][y] = food;
-    }
-
     public void deleteElement(int x, int y) {
         this.farm[x][y] = null;
     }
@@ -342,5 +337,4 @@ public class Farm extends JPanel implements ActionListener {
     public ElementEnum getCurrentElementEnum() {
         return currentElementEnum;
     }
-
 }

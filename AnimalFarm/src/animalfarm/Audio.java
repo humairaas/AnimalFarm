@@ -3,10 +3,6 @@ package animalfarm;
 import java.io.*;
 import javax.sound.sampled.*;
 
-/**
- *
- * @author User
- */
 public class Audio {
 
     File rain, wind, night, sun;
@@ -91,5 +87,4 @@ public class Audio {
     public void stopSun() {
         sunClip.stop();
     }
-    
 }

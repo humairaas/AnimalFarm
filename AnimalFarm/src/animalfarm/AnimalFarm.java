@@ -1,19 +1,15 @@
 package animalfarm;
 
-/**
- *
- * @author User
- */
 public class AnimalFarm {
 
     static Farm farm;
     static AnimalFactory afactory;
     static DecorationFactory dfactory;
     Decoration barn, bush, coop, delete, feed, fence, haystack, light, pond, tree; 
+    Animal chicken, cow, duck, horse, sheep;  
     Tree treeSubject;
     Bush bushSubject;
     Light lightSubject;
-    Animal chicken, cow, duck, horse, sheep;    
     Audio audio;
     WeatherFacade weather;
 
@@ -40,8 +36,8 @@ public class AnimalFarm {
         duck = afactory.createAnimal(ElementEnum.DUCK);
         horse = afactory.createAnimal(ElementEnum.HORSE);
         sheep = afactory.createAnimal(ElementEnum.SHEEP);
-        farm = new Farm(barn, bush, coop, haystack, light, pond, tree, chicken, cow, duck, horse, sheep); 
         
+        farm = new Farm(barn, bush, coop, haystack, light, pond, tree, chicken, cow, duck, horse, sheep); 
         weather = new WeatherFacade(farm, treeSubject, lightSubject, bushSubject, audio);
     }
 
@@ -60,6 +56,5 @@ public class AnimalFarm {
 
     public static Farm getFarmInstance() {
         return farm;
-    }
-    
+    }  
 }

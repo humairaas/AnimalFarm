@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public interface Element {
 
     ElementEnum getName();

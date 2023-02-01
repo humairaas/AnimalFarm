@@ -3,10 +3,6 @@ package animalfarm;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class KeyHandler implements KeyListener {
 
     WeatherFacade weather;
@@ -22,7 +18,8 @@ public class KeyHandler implements KeyListener {
 
     int speedX, speedY;
 
-    public KeyHandler(AnimalFactory afactory, DecorationFactory dfactory, Farm farm, WeatherFacade weather, Decoration light) {
+    public KeyHandler(AnimalFactory afactory, DecorationFactory dfactory, Farm farm, 
+                      WeatherFacade weather, Decoration light) {
         this.farm = farm;
         this.weather = weather;
         this.afactory = afactory;
@@ -34,9 +31,7 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
-
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
@@ -71,7 +66,8 @@ public class KeyHandler implements KeyListener {
                     Animal animal = (Animal) element;
                     if (animal.canBeSold()) {
                         animal.sell();
-                        System.out.println("Animal " + animal.getName() + " sold for $" + animal.sellPrice);
+                        System.out.println("Animal " + animal.getName() + " sold for $" 
+                                            + animal.sellPrice);
                         animal.stopTimer();
                         farm.deleteElement(farm.x, farm.y);
                     } else {
@@ -91,7 +87,15 @@ public class KeyHandler implements KeyListener {
             } else {
                 Element element = farm.getElement(farm.x, farm.y);
                 if (element == null) {
-                    if (currentElementEnum == ElementEnum.FENCE || currentElementEnum == ElementEnum.BARN || currentElementEnum == ElementEnum.COOP || currentElementEnum == ElementEnum.HAYSTACK || currentElementEnum == ElementEnum.LIGHT || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.POND || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.BUSH) { 
+                    if (currentElementEnum == ElementEnum.FENCE || 
+                        currentElementEnum == ElementEnum.BARN || 
+                        currentElementEnum == ElementEnum.COOP || 
+                        currentElementEnum == ElementEnum.HAYSTACK || 
+                        currentElementEnum == ElementEnum.LIGHT || 
+                        currentElementEnum == ElementEnum.TREE || 
+                        currentElementEnum == ElementEnum.POND || 
+                        currentElementEnum == ElementEnum.TREE || 
+                        currentElementEnum == ElementEnum.BUSH) { 
                         Decoration decoration = dfactory.createDecoration(currentElementEnum);
                         if (decoration.canBeBought()) {
                             if (decoration instanceof Fence) decoration.setImage(farm.getFenceImage());
@@ -254,6 +258,5 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }

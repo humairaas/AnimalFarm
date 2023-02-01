@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Icon {
 
     private ImageIcon grass, cloudy, night, rain, dark, barn, menu;

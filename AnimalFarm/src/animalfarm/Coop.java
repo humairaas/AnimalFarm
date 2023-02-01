@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author haneyiskdr
- */
 public class Coop extends Decoration {
 
     public Coop() {
@@ -17,5 +13,4 @@ public class Coop extends Decoration {
     public ImageIcon getCoop() {
         return image;
     }
-    
 }

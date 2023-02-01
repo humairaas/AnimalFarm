@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public abstract class Decoration implements Element {
 
     ElementEnum name;

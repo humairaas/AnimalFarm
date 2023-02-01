@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author haneyiskdr
- */
 public class Delete extends Decoration {
 
     public Delete() {
@@ -16,5 +12,4 @@ public class Delete extends Decoration {
         image = new ImageIcon("res/delete.png");
         return image;
     }
-    
 }

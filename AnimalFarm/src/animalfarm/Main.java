@@ -1,9 +1,5 @@
 package animalfarm;
 
-/**
- *
- * @author User
- */
 public class Main {
 
     /**
@@ -13,5 +9,4 @@ public class Main {
         AnimalFarm farm = new AnimalFarm();
         farm.start();
     }
-
 }

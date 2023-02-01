@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package animalfarm;
 
-/**
- *
- * @author haneyiskdr
- */
 public class AnimalFactory {
     public Animal createAnimal(ElementEnum animalType) {
         if (animalType == null) {

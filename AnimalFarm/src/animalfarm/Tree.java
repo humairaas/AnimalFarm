@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Tree extends Decoration implements Subject {
     private List<Observer> observers;
             

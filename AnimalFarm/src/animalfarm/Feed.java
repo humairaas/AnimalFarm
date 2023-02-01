@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.*;
 
-/**
- *
- * @author haneyiskdr
- */
 public class Feed extends Decoration {
 
     public Feed() {
@@ -16,5 +12,4 @@ public class Feed extends Decoration {
         image = new ImageIcon("res/feed.png");
         return image;
     }
-    
 }

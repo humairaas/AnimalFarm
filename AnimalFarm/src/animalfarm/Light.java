@@ -5,10 +5,6 @@ import java.util.List;
 
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Light extends Decoration implements Subject {
     private List<Observer> observers;
 
@@ -46,5 +42,4 @@ public class Light extends Decoration implements Subject {
     public String toString() {
         return "Light{" + "observers=" + observers + '}';
     }
-
 }

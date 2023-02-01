@@ -2,10 +2,6 @@ package animalfarm;
 
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author User
- */
 public class LightChild extends Decoration implements Observer{
     private Subject light;
 
@@ -21,5 +17,4 @@ public class LightChild extends Decoration implements Observer{
     public void update(ImageIcon image) {
         this.image = image;
     }
- 
 }

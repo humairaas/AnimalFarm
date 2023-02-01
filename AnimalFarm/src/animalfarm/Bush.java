@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 
-/**
- *
- * @author User
- */
 public class Bush extends Decoration implements Subject {
     private List<Observer> observers;
 
@@ -44,6 +40,5 @@ public class Bush extends Decoration implements Subject {
     @Override
     public String toString() {
         return "Bush{" + "observers=" + observers + '}';
-    }
-    
+    } 
 }
