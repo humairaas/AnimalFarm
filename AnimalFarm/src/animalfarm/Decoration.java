@@ -15,8 +15,12 @@ public abstract class Decoration implements Element {
     public Decoration() {
     }
 
+    public boolean canBeBought() {
+        return Farm.getCurrencyInstance() >= cost;
+    }
+
     public void buy() {
-        if (Farm.getCurrencyInstance() >= cost) {
+        if (canBeBought()) {
             Farm.setCurrency(Farm.getCurrencyInstance() - cost);
         } else {
             System.out.println("Not enough money to buy this decoration");

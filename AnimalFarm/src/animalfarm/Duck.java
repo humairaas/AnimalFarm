@@ -13,6 +13,7 @@ public class Duck extends Animal {
         image = new ImageIcon("res/duck.gif");
         audio = "res/duck-quacking.wav";
         cost = 5;
+        sellPrice = 8;
     }
 
     public ImageIcon getDuck() {

@@ -13,6 +13,7 @@ public class Chicken extends Animal {
         image = new ImageIcon("res/chicken.gif");
         audio = "res/chicken.wav";
         cost = 2;
+        sellPrice = 3;
     }
 
     public ImageIcon getChicken() {

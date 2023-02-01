@@ -33,6 +33,8 @@ public class DecorationFactory {
             return new Coop();
         } else if (decorationType == ElementEnum.DELETE) {
             return new Delete();
+        } else if (decorationType == ElementEnum.FEED) {
+            return new Feed();
         } else if (decorationType == ElementEnum.FENCE) {
             return new Fence();
         } else if (decorationType == ElementEnum.HAYSTACK) {

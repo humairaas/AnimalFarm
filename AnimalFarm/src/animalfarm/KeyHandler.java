@@ -67,28 +67,43 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_SPACE) {
             if (currentElementEnum == ElementEnum.DELETE) {
                 Element element = farm.getElement(farm.x, farm.y);
-                if (element != null) {
-                    if (element instanceof Animal) {
-                        Animal animal = (Animal) element;
-                        
+                if (element != null && element instanceof Animal) {
+                    Animal animal = (Animal) element;
+                    if (animal.canBeSold()) {
+                        animal.sell();
+                        System.out.println("Animal " + animal.getName() + " sold for $" + animal.sellPrice);
+                        animal.stopTimer();
+                        farm.deleteElement(farm.x, farm.y);
+                    } else {
+                        System.out.println("Not mature yet");
                     }
-                    farm.deleteElement(farm.x, farm.y);
-                } 
-                    
-            } else if (currentElementEnum == ElementEnum.FENCE) {
-                Decoration newFence = dfactory.createDecoration(currentElementEnum);
-                newFence.setImage(farm.getFenceImage());
-                newFence.buy();
-                farm.setElement(newFence, farm.x, farm.y);
-            } else if (currentElementEnum == ElementEnum.BARN || currentElementEnum == ElementEnum.COOP || currentElementEnum == ElementEnum.HAYSTACK || currentElementEnum == ElementEnum.LIGHT || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.POND || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.BUSH) { 
-                Decoration decoration = dfactory.createDecoration(currentElementEnum);
-                decoration.buy();
-                farm.setElement(decoration, farm.x, farm.y);
+                }
+            } else if (currentElementEnum == ElementEnum.FEED) {
+                Element element = farm.getElement(farm.x, farm.y);
+                if (element != null && element instanceof Animal) {
+                    Animal animal = (Animal) element;
+                    animal.feed();
+                    System.out.println("Animal " + animal.getName() + " fed");
+                }
             } else {
-                Animal animal = afactory.createAnimal(currentElementEnum);
-                animal.buy();
-                farm.setElement(animal, farm.x, farm.y);
-            }            
+                Element element = farm.getElement(farm.x, farm.y);
+                if (element == null) {
+                    if (currentElementEnum == ElementEnum.FENCE || currentElementEnum == ElementEnum.BARN || currentElementEnum == ElementEnum.COOP || currentElementEnum == ElementEnum.HAYSTACK || currentElementEnum == ElementEnum.LIGHT || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.POND || currentElementEnum == ElementEnum.TREE || currentElementEnum == ElementEnum.BUSH) { 
+                        Decoration decoration = dfactory.createDecoration(currentElementEnum);
+                        if (decoration.canBeBought()) {
+                            if (decoration instanceof Fence) decoration.setImage(farm.getFenceImage());
+                            decoration.buy();
+                            farm.setElement(decoration, farm.x, farm.y);
+                        }
+                    } else {
+                        Animal animal = afactory.createAnimal(currentElementEnum);
+                        if (animal.canBeBought()) {
+                            animal.buy();
+                            farm.setElement(animal, farm.x, farm.y);
+                        }
+                    }            
+                }
+            }
             farm.setCurrentElementEnum(ElementEnum.EMPTY);
             farm.setAllFalse();
             farm.setX(8);
@@ -154,6 +169,12 @@ public class KeyHandler implements KeyListener {
             farm.setAllFalse();
             this.decoration = dfactory.createDecoration(ElementEnum.DELETE);
             farm.setIsDelete(true);
+        }
+        if (code == KeyEvent.VK_0) {
+            farm.setCurrentElementEnum(ElementEnum.FEED);
+            farm.setAllFalse();
+            this.decoration = dfactory.createDecoration(ElementEnum.FEED);
+            farm.setIsFeed(true);
         }
         
         // Control light

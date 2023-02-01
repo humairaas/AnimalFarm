@@ -13,6 +13,7 @@ public class Sheep extends Animal {
         image = new ImageIcon("res/sheep.gif");
         audio = "res/sheep.wav";
         cost = 10;
+        sellPrice = 15;
     }
 
     public ImageIcon getSheep() {
