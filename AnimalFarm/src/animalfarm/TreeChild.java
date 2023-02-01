@@ -11,6 +11,7 @@ public class TreeChild extends Decoration implements Observer{
 
     public TreeChild(Subject tree) {
         name = ElementEnum.TREE;
+        cost = 20;
         image = new ImageIcon("res/tree.png");
         this.tree = tree;
         tree.registerObserver(this);

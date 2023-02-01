@@ -27,7 +27,6 @@ public class DecorationFactory {
         if (decorationType == ElementEnum.BARN) {
             return new Barn();
         } else if (decorationType == ElementEnum.BUSH) {
-            // add as observer
             return new BushChild(bush);
         } else if (decorationType == ElementEnum.COOP) {
             return new Coop();

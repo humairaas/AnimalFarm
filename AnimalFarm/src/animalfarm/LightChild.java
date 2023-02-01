@@ -11,6 +11,7 @@ public class LightChild extends Decoration implements Observer{
 
     public LightChild(Subject light) {
         name = ElementEnum.LIGHT;
+        cost = 25;
         image = new ImageIcon("res/lamp_sun.png");
         this.light = light;
         light.registerObserver(this);

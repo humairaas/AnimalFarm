@@ -11,6 +11,7 @@ public class BushChild extends Decoration implements Observer{
 
     public BushChild(Subject bush) {
         name = ElementEnum.BUSH;
+        cost = 5;
         image = new ImageIcon("res/bush.png");
         this.bush = bush;
         bush.registerObserver(this);
