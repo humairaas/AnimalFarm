@@ -1,7 +1,8 @@
 package animalfarm;
 
 import java.awt.event.*;
-
+import java.io.*;
+import javax.sound.sampled.*;
 import javax.swing.*;
 
 /**
@@ -14,6 +15,9 @@ public abstract class Animal implements Element {
     ImageIcon image;
     String audio;
     Timer timer;
+    private AudioInputStream animalSoundStream;
+    private File animalSoundFile;
+    private Clip animalClip;
 
     static int total_animal_count = 0;
     int animal_index = 0;
@@ -23,7 +27,7 @@ public abstract class Animal implements Element {
     int sellPrice;
     int initialHungerLevel;
     int harvestingAgeInMinutes;
-    
+
     int currentHungerLevel;
     int currentAgeInMinutes;
     int x;
@@ -31,7 +35,7 @@ public abstract class Animal implements Element {
     boolean hasNotifiedReadyToHarvest = false;
 
     CurrencySingleton currencySingleton;
-    
+
     public Animal() {
         currencySingleton = CurrencySingleton.getInstance();
     }
@@ -85,6 +89,18 @@ public abstract class Animal implements Element {
         this.audio = audio;
     }
 
+    public void playAudio() {
+        try {
+            animalSoundFile = new File(this.audio);
+            animalSoundStream = AudioSystem.getAudioInputStream(this.animalSoundFile);
+            animalClip = AudioSystem.getClip();
+            animalClip.open(animalSoundStream);
+            animalClip.start();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
     public void stopTimer() {
         timer.stop();
     }
@@ -113,13 +129,15 @@ public abstract class Animal implements Element {
             public void actionPerformed(ActionEvent e) {
                 currentAgeInMinutes++;
                 currentHungerLevel--;
-                System.out.println("Animal " + name + " of index " + animal_index + " hunger level: " + currentHungerLevel);
+                System.out.println(
+                        "Animal " + name + " of index " + animal_index + " hunger level: " + currentHungerLevel);
                 if (currentHungerLevel <= 0) {
                     System.out.println("Animal " + name + " of index " + animal_index + " died of hunger");
                     stopTimer();
                     delete();
                 }
-                System.out.println("Animal " + name + " of index " + animal_index + " is now aged " + currentAgeInMinutes + " years");
+                System.out.println("Animal " + name + " of index " + animal_index + " is now aged "
+                        + currentAgeInMinutes + " years");
                 if (canBeSold() && !hasNotifiedReadyToHarvest) {
                     hasNotifiedReadyToHarvest = true;
                     System.out.println("Animal " + name + " of index " + animal_index + " is ready to be sold");
