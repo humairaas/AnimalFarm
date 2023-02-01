@@ -287,6 +287,10 @@ public class Farm extends JPanel implements ActionListener {
         this.farm[x][y] = decoration;
     }
 
+    public Element getElement(int x, int y) {
+        return this.farm[x][y];
+    }
+
     public void setElement(Animal animal, int x, int y) {
         this.farm[x][y] = animal;
         animal.startTimer();

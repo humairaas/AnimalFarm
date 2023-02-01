@@ -63,7 +63,7 @@ public abstract class Animal implements Element {
     public void startTimer() {
         animal_index = total_animal_count;
         total_animal_count++;
-        int interval_in_seconds = 60
+        int interval_in_seconds = 60;
         Timer timer = new Timer(interval_in_seconds * 1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

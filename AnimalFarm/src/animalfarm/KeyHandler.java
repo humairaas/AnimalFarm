@@ -60,7 +60,8 @@ public class KeyHandler implements KeyListener {
         // Control decoration
         if (code == KeyEvent.VK_SPACE) {
             if (currentElementEnum == ElementEnum.DELETE) {
-                this.decoration.setImage(new ImageIcon("res/empty.png"));
+                Element element = farm.getElement(farm.x, farm.y);
+                if (element != null) farm.deleteElement(farm.x, farm.y);
             } else if (currentElementEnum == ElementEnum.FENCE) {
                 Decoration newFence = dfactory.createDecoration(currentElementEnum, false);
                 newFence.setImage(farm.getFenceImage());
@@ -131,6 +132,7 @@ public class KeyHandler implements KeyListener {
             farm.setIsTree(true);
         }
         if (code == KeyEvent.VK_9) {
+            farm.setCurrentElementEnum(ElementEnum.DELETE);
             farm.setAllFalse();
             this.decoration = dfactory.createDecoration(ElementEnum.DELETE, false);
             farm.setIsDelete(true);
