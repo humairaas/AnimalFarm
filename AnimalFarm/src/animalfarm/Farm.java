@@ -50,7 +50,6 @@ public class Farm extends JPanel implements ActionListener {
     private boolean isHorse = false;   
     
     private static int currency = 0;
-    private static int foodCount = 0;
     private Font derivedFont;
 
     public Farm(Decoration barnEl, Decoration bushEl, Decoration coopEl, Decoration haystackEl, Decoration lightsEl, Decoration pondEl, Decoration treeEl, Animal chickenEl, Animal cowEl, Animal duckEl, Animal horseEl, Animal sheepEl) {
@@ -70,7 +69,6 @@ public class Farm extends JPanel implements ActionListener {
         this.horseEl = horseEl;
         this.sheepEl = sheepEl;  
         currency = 100;
-        foodCount = 100;
 
         InputStream is = getClass().getResourceAsStream("Minecraft.ttf");
         try {
@@ -342,14 +340,6 @@ public class Farm extends JPanel implements ActionListener {
 
     public static void setCurrency(int currency) {
         Farm.currency = currency;
-    }
-
-    public static int getFoodCountInstance() {
-        return foodCount;
-    }
-
-    public static void setFoodCount(int foodCount) {
-        Farm.foodCount = foodCount;
     }
 
 }
