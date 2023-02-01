@@ -29,12 +29,15 @@ public abstract class Animal implements Element {
     int x;
     int y;
     boolean hasNotifiedReadyToHarvest = false;
+
+    CurrencySingleton currencySingleton;
     
     public Animal() {
+        currencySingleton = CurrencySingleton.getInstance();
     }
 
     public boolean canBeBought() {
-        return Farm.getCurrencyInstance() >= cost;
+        return currencySingleton.getCurrency() >= cost;
     }
 
     public boolean canBeSold() {
@@ -43,14 +46,14 @@ public abstract class Animal implements Element {
 
     public void buy() {
         if (canBeBought()) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - cost);
+            currencySingleton.setCurrency(currencySingleton.getCurrency() - cost);
         } else {
             System.out.println("Not enough money to buy this animal");
         }
     }
 
     public void sell() {
-        Farm.setCurrency(Farm.getCurrencyInstance() + sellPrice);
+        currencySingleton.setCurrency(currencySingleton.getCurrency() + sellPrice);
     }
 
     @Override

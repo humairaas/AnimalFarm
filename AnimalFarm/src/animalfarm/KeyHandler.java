@@ -78,6 +78,9 @@ public class KeyHandler implements KeyListener {
                         System.out.println("Not mature yet");
                     }
                 }
+                else {
+                    farm.deleteElement(farm.x, farm.y);
+                }
             } else if (currentElementEnum == ElementEnum.FEED) {
                 Element element = farm.getElement(farm.x, farm.y);
                 if (element != null && element instanceof Animal) {
