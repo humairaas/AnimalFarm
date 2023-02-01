@@ -51,8 +51,8 @@ public class Farm extends JPanel implements ActionListener {
     private boolean isChicken = false;         
     private boolean isHorse = false;   
     
-    private static int currency = 0;
     private Font derivedFont;
+    private CurrencySingleton currencySingleton;
 
     public Farm(Decoration barnEl, Decoration bushEl, Decoration coopEl, Decoration haystackEl, Decoration lightsEl, Decoration pondEl, Decoration treeEl, Animal chickenEl, Animal cowEl, Animal duckEl, Animal horseEl, Animal sheepEl) {
         el = new Icon();
@@ -71,7 +71,6 @@ public class Farm extends JPanel implements ActionListener {
         this.duckEl = duckEl;                          
         this.horseEl = horseEl;
         this.sheepEl = sheepEl;  
-        currency = 100;
 
         InputStream is = getClass().getResourceAsStream("Minecraft.ttf");
         try {
@@ -82,6 +81,7 @@ public class Farm extends JPanel implements ActionListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        currencySingleton = CurrencySingleton.getInstance();
     }
 
     @Override
@@ -179,7 +179,7 @@ public class Farm extends JPanel implements ActionListener {
         el.getMenu().paintIcon(this, g, 21 * size, 25);
         g.setFont(derivedFont); 
         g.setColor(Color.WHITE);
-        g.drawString("$" + String.valueOf(Farm.currency), 940,30);
+        g.drawString("$" + String.valueOf(currencySingleton.getCurrencyInstance()), 940,30);
     }
 
     public void draw(Element element, Graphics g, int row, int col){
@@ -341,14 +341,6 @@ public class Farm extends JPanel implements ActionListener {
 
     public ElementEnum getCurrentElementEnum() {
         return currentElementEnum;
-    }
-
-    public static int getCurrencyInstance() {
-        return currency;
-    }
-
-    public static void setCurrency(int currency) {
-        Farm.currency = currency;
     }
 
 }

@@ -12,16 +12,19 @@ public abstract class Decoration implements Element {
     ImageIcon image;
     int cost;
 
+    CurrencySingleton currencySingleton;
+
     public Decoration() {
+        currencySingleton = CurrencySingleton.getInstance();
     }
 
     public boolean canBeBought() {
-        return Farm.getCurrencyInstance() >= cost;
+        return currencySingleton.getCurrencyInstance() >= cost;
     }
 
     public void buy() {
         if (canBeBought()) {
-            Farm.setCurrency(Farm.getCurrencyInstance() - cost);
+            currencySingleton.setCurrency(currencySingleton.getCurrencyInstance() - cost);
         } else {
             System.out.println("Not enough money to buy this decoration");
         }
